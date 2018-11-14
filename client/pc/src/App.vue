@@ -1,26 +1,30 @@
 <template>
 	<div id="app">
 		<top></top>
-		<!--<router-view></router-view>-->
+		<router-view></router-view>
+		<bottom></bottom>
 	</div>
 </template>
 
 <script>
 	import top from "./components/Header.vue";
+	import bottom from "./components/Footer.vue";
 	export default {
 		name: 'App',
 		components:{
-			top
+			top,
+			bottom
 		}
 	}
 </script>
-
-
 
 <style>
 	* {
 		margin: 0;
 		padding: 0;
+	}
+	body {
+	 	background-color: #FAEBD7;
 	}
 	#app {
 		font-family: 'Avenir', Helvetica, Arial, sans-serif;

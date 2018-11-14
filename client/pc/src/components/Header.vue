@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<header>
 		<div class="top">
 			<el-col :span='18' :offset='3'>
 				<div class="content">
@@ -172,7 +172,7 @@
 				</nav>
 			</el-col>
 		</div>
-	</div>
+	</header>
 </template>
 <script>
 	export default {
@@ -191,7 +191,7 @@
 	.top {
 		width: 100%;
 		height: 129px;
-		background-color: #D2B48C;
+		background-color: #DEB887;
 	}
 	
 	.content {
@@ -270,6 +270,7 @@
 		width: 100%;
 		height: 76px;
 		box-shadow: 8px 2px 5px 1px #DCDCDC;
+		background-color: white;
 	}
 	nav {
 		width: 100%;
@@ -331,7 +332,7 @@
 		left: -216px;
 	}
 	.item div{
-		margin-top: 18px;
+		margin-top: 15px;
 		display: inline-block;
 		width: 360px;
 	}
