@@ -268,7 +268,7 @@
 		height: 337px;
 		top: 0;
 		font-size: 0;
-		transition: all 1s;
+		transition: all .3s linear;
 	}
 	
 	.leftOne {

@@ -118,7 +118,7 @@
 		width: 4068px;
 		height: 804px;
 		top: 0;
-		transition: all 1s;
+		transition: all .6s linear;
 	}
 	
 	.leftOne {

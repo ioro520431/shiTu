@@ -53,6 +53,7 @@
 		background-color: #60a531;
 		font-size: 12px;
 		color: white;
+		box-shadow: 1px 1px 1px 0 #A9A9A9;
 	}
 	.tip em {
 		background-image: url(../assets/gxarrow.png);
