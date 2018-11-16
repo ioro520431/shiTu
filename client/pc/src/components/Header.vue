@@ -285,7 +285,7 @@
 		text-decoration: none;
 		font-size: 18px;
 		padding: 0 26px;
-		color: #444;
+		color: #8B4513;
 	}
 	li strong {
 		height: 72px;
@@ -314,22 +314,23 @@
 		background-color: #E1FFFF;
 	}
 	.active {
-		border-bottom: 4px solid red;
+		border-bottom: 4px solid #8B4513;
 	}
 	.item {
 		padding-left:28px ;
 		position: absolute;
-		width: 1024px;
+		z-index: 9999;
+		width: 984px;
 		height: 280px;
 		background-color: #E1FFFF;
 		display: none;
-		box-shadow: 3px 3px 3px 1px #DCDCDC;
+		box-shadow: 3px 1px 2px 1px #DCDCDC;
 	}
 	.itemOne .item {
-		left: -88px;
+		left: -93px;
 	}
 	.itemTwo .item {
-		left: -216px;
+		left: -222px;
 	}
 	.item div{
 		margin-top: 15px;
