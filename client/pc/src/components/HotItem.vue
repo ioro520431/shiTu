@@ -83,6 +83,7 @@
 		width: 1011px;
 		height: 804px;
 		float: left;
+		margin-right: 6px;
 	}
 	.cases h2 {
 		width: 100%;

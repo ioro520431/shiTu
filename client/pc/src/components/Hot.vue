@@ -115,7 +115,7 @@
 	
 	.view {
 		position: absolute;
-		width: 4044px;
+		width: 4068px;
 		height: 804px;
 		top: 0;
 		transition: all 1s;
@@ -126,15 +126,15 @@
 	}
 	
 	.leftTwo {
-		left: -1011px;
+		left: -1017px;
 	}
 	
 	.leftThree {
-		left: -2022px;
+		left: -2034px;
 	}
 	
 	.leftFour {
-		left: -3033px;
+		left: -3051px;
 	}
 	
 	.prev_btn,
