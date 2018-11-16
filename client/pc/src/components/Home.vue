@@ -27,20 +27,46 @@
 			<div class="middle">
 				<hot></hot>
 			</div>
+			<div class="bottom">
+				<h2>健康新闻</h2>
+				<a href="#">
+					更多健康资讯<em class="el-icon-arrow-right"></em>
+				</a>
+				<div class="healthy_view">
+					<el-row :gutter='20' class='healthy_case'>
+						<el-col :span='12'>
+							<healthy></healthy>
+						</el-col>
+						<el-col :span='12'>
+							<healthy></healthy>
+						</el-col>
+					</el-row>
+					<el-row :gutter='20' class='healthy_case'>
+						<el-col :span='12'>
+							<healthy></healthy>
+						</el-col>
+						<el-col :span='12'>
+							<healthy></healthy>
+						</el-col>
+					</el-row>
+				</div>
+			</div>
 		</el-col>
 	</div>
 </template>
 
 <script>
-	import broadCast from './Broadcast.vue'
-	import material from './Material.vue'
-	import hot from './Hot.vue'
+	import broadCast from './Broadcast.vue';
+	import material from './Material.vue';
+	import hot from './Hot.vue';
+	import healthy from './Healthy.vue';
 	export default {
 		name: 'Home',
 		components: {
 			broadCast,
 			material,
-			hot
+			hot,
+			healthy
 		},
 		data() {
 			return {
@@ -227,14 +253,58 @@
 	.box {
 		width: 971px;
 		height: 192px;
-		padding:0 20px;
+		padding: 0 20px;
 		background-color: white;
 	}
 	
 	.middle {
 		width: 100%;
 		height: 804px;
-		/*background-color: darkgray;*/
+	}
+	
+	.bottom {
+		position: relative;
+		width: 1011px;
+		margin-bottom: 50px;
+	}
+	
+	.bottom h2 {
+		width: 100%;
+		height: 120px;
+		line-height: 120px;
+		text-align: center;
+		font-weight: normal;
+	}
+	
+	.bottom>a {
+		position: absolute;
+		display: inline-block;
+		width: 84px;
+		height: 48px;
+		top: 36px;
+		right: 0;
+		font-size: 12px;
+		line-height: 48px;
+		color: #A9A9A9;
+		text-decoration: none;
+	}
+	
+	.bottom>a:hover {
+		color: #8B4513;
+		text-decoration: underline;
+	}
+	
+	.healthy_box>a:hover em {
+		text-decoration: underline;
+	}
+	
+	.healthy_view {
+		width: 100%;
+	}
+	
+	.healthy_case {
+		height: 160px;
+		margin-bottom: 20px;
 	}
 </style>
 <style>
