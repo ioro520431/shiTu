@@ -4,14 +4,14 @@
 		<ul>
 			<li v-for="item in list">
 				<div>
-					<a href="#">
+					<router-link to='#'>
 						<img :src="item.srcs" />
-					</a>
+					</router-link>
 					<div class="text">
-						<a href="#">{{item.title}}</a>
+						<router-link to='#'>{{item.title}}</router-link>
 						<i>{{item.text}}</i>
 						<span>
-							<a href="#">{{item.tip}}</a>
+							<router-link to='#'>{{item.tip}}</router-link>
 							<em></em>
 						</span>
 					</div>

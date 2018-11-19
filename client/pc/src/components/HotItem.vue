@@ -34,30 +34,30 @@
 							<h2>热门栏目推荐</h2>
 							<ul>
 								<li>
-									<a href="#">最新菜谱</a>
-									<a href="#">家常菜</a>
+									<router-link to='#'>最新菜谱</router-link>
+									<router-link to='#'>家常菜</router-link>
 								</li>
 								<li>
-									<a href="#">凉菜</a>
-									<a href="#">素食</a>
-									<a href="#">早餐</a>
+									<router-link to='#'>凉菜</router-link>
+									<router-link to='#'>素食</router-link>
+									<router-link to='#'>早餐</router-link>
 								</li>
 								<li>
-									<a href="#">乌发</a>
-									<a href="#">高血压</a>
-									<a href="#">烘焙</a>
+									<router-link to='#'>乌发</router-link>
+									<router-link to='#'>高血压</router-link>
+									<router-link to='#'>烘焙</router-link>
 								</li>
 								<li>
-									<a href="#">韩国料理</a>
-									<a href="#">川菜</a>
+									<router-link to='#'>韩国料理</router-link>
+									<router-link to='#'>川菜</router-link>
 								</li>
 								<li>
-									<a href="#">粤菜</a>
-									<a href="#">湘菜</a>
-									<a href="#">甜点</a>
+									<router-link to='#'>粤菜</router-link>
+									<router-link to='#'>湘菜</router-link>
+									<router-link to='#'>甜点</router-link>
 								</li>
 								<li>
-									<a href="#" class="all">进入菜谱大全>></a>
+									<router-link to='#' class='all'>进入菜谱大全>></router-link>
 								</li>
 							</ul>
 						</div>
@@ -148,6 +148,7 @@
 		background-color: #8B4513;
 	}
 	.hot_menu .all {
+		display: inline-block;
 		color: white;
 		background-color: #8B4513;
 		border: 1px solid #8B4513;

@@ -5,21 +5,21 @@
 			<div class="top">
 				<h2>
 					八月，清热利湿，及时补水
-					<a href="#">更多食材<i class="el-icon-arrow-right"></i></a>
+					<router-link to='#'>更多食材<i class="el-icon-arrow-right"></i></router-link>
 				</h2>
 				<div class="box">
 					<el-tabs v-model="activeName">
 						<el-tab-pane label="水果" name="first">
-							<material :list='list[0]'></material>
+							<foodMaterial :list='list[0]'></foodMaterial>
 						</el-tab-pane>
 						<el-tab-pane label="蔬菜" name="second">
-							<material :list='list[1]'></material>
+							<foodMaterial :list='list[1]'></foodMaterial>
 						</el-tab-pane>
 						<el-tab-pane label="五谷" name="third">
-							<material :list='list[2]'></material>
+							<foodMaterial :list='list[2]'></foodMaterial>
 						</el-tab-pane>
 						<el-tab-pane label="生鲜" name="fourth">
-							<material :list='list[3]'></material>
+							<foodMaterial :list='list[3]'></foodMaterial>
 						</el-tab-pane>
 					</el-tabs>
 				</div>
@@ -29,9 +29,9 @@
 			</div>
 			<div class="bottom">
 				<h2>健康新闻</h2>
-				<a href="#">
+				<router-link to='#'>
 					更多健康资讯<em class="el-icon-arrow-right"></em>
-				</a>
+				</router-link>
 				<div class="healthy_view">
 					<el-row :gutter='20' class='healthy_case'>
 						<el-col :span='12'>
@@ -57,14 +57,14 @@
 
 <script>
 	import broadCast from './Broadcast.vue';
-	import material from './Material.vue';
+	import foodMaterial from './FoodMaterial.vue';
 	import hot from './Hot.vue';
 	import healthy from './Healthy.vue';
 	export default {
 		name: 'Home',
 		components: {
 			broadCast,
-			material,
+			foodMaterial,
 			hot,
 			healthy
 		},
@@ -207,6 +207,9 @@
 
 				]
 			}
+		},
+		mounted: function() {
+			this.$store.commit('changeTopFlag', 1)
 		}
 	}
 </script>

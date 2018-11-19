@@ -3,9 +3,9 @@
 		<div class="top">
 			<el-col :span='18' :offset='3'>
 				<div class="content">
-					<a href="/">
+					<router-link to='/'>
 						<img src="../assets/logo.png" />
-					</a>
+					</router-link>
 					<div class="search">
 						<div class="input">
 							<el-input v-model='input' placeholder='请输入菜谱/食材/菜单/作者'></el-input>
@@ -16,8 +16,8 @@
 					</div>
 					<div class="user">
 						<p>亲，您还未登录！</p>
-						<a href="#">注册</a>
-						<a href="/login">登录</a>
+						<router-link to='#'>注册</router-link>
+						<router-link to='/login'>登录</router-link>
 					</div>
 				</div>
 			</el-col>
@@ -27,146 +27,146 @@
 				<nav>
 					<ul>
 						<li>
-							<a href="#"><strong class="active">首页</strong></a>
+							<router-link to='/'><strong :class="{active:topFlag==1}">首页</strong></router-link>
 						</li>
 						<li class="position itemOne">
-							<a href="#"><strong>菜谱大全</strong></a>
+							<router-link to='/material'><strong :class="{active:topFlag==2}">菜谱大全</strong></router-link>
 							<i class="el-icon-arrow-down"></i>
 							<div class="item">
 								<div>
 									<dl>
-										<dt><a href="#">家常菜谱</a></dt>
-										<dd><a href="#">家常菜</a></dd>
-										<dd><a href="#">凉菜</a></dd>
-										<dd><a href="#">素食</a></dd>
-										<dd><a href="#">早餐</a></dd>
-										<dd><a href="#">午餐</a></dd>
-										<dd><a href="#">晚餐</a></dd>
-										<dd><a href="#">私家菜</a></dd>
+										<dt><router-link to='/material'>家常菜谱</router-link></dt>
+										<dd><router-link to='/material'>家常菜</router-link></dd>
+										<dd><router-link to='/material'>凉菜</router-link></dd>
+										<dd><router-link to='/material'>素食</router-link></dd>
+										<dd><router-link to='/material'>早餐</router-link></dd>
+										<dd><router-link to='/material'>午餐</router-link></dd>
+										<dd><router-link to='/material'>晚餐</router-link></dd>
+										<dd><router-link to='/material'>私家菜</router-link></dd>
 									</dl>
 								</div>
 								<br />
 								<div>
 									<dl>
-										<dt><a href="#">中华菜系</a></dt>
-										<dd><a href="#">川菜</a></dd>
-										<dd><a href="#">粤菜</a></dd>
-										<dd><a href="#">东北菜</a></dd>
-										<dd><a href="#">湘菜</a></dd>
+										<dt><router-link to='/material'>中华菜系</router-link></dt>
+										<dd><router-link to='/material'>川菜</router-link></dd>
+										<dd><router-link to='/material'>粤菜</router-link></dd>
+										<dd><router-link to='/material'>东北菜</router-link></dd>
+										<dd><router-link to='/material'>湘菜</router-link></dd>
 									</dl>
 								</div>
 								<div>
 									<dl>
-										<dt><a href="#">各地小吃</a></dt>
-										<dd><a href="#">四川小吃</a></dd>
-										<dd><a href="#">广东小吃</a></dd>
-										<dd><a href="#">北京小吃</a></dd>
-										<dd><a href="#">陕西小吃</a></dd>
-									</dl>
-								</div>
-								<br />
-								<div>
-									<dl>
-										<dt><a href="#">外国菜谱</a></dt>
-										<dd><a href="#">韩国料理</a></dd>
-										<dd><a href="#">日本料理</a></dd>
-										<dd><a href="#">法国菜</a></dd>
-										<dd><a href="#">意大利餐</a></dd>
-									</dl>
-								</div>
-								<div>
-									<dl>
-										<dt><a href="#">烘焙</a></dt>
-										<dd><a href="#">蛋糕面包</a></dd>
-										<dd><a href="#">饼干配方</a></dd>
-										<dd><a href="#">甜品点心</a></dd>
+										<dt><router-link to='/material'>各地小吃</router-link></dt>
+										<dd><router-link to='/material'>四川小吃</router-link></dd>
+										<dd><router-link to='/material'>广东小吃</router-link></dd>
+										<dd><router-link to='/material'>北京小吃</router-link></dd>
+										<dd><router-link to='/material'>陕西小吃</router-link></dd>
 									</dl>
 								</div>
 								<br />
 								<div>
 									<dl>
-										<dt><a href="#">厨房百科</a></dt>
-										<dd><a href="#">烹饪技巧</a></dd>
-										<dd><a href="#">美食专题</a></dd>
+										<dt><router-link to='/material'>外国菜谱</router-link></dt>
+										<dd><router-link to='/material'>韩国料理</router-link></dd>
+										<dd><router-link to='/material'>日本料理</router-link></dd>
+										<dd><router-link to='/material'>法国菜</router-link></dd>
+										<dd><router-link to='/material'>意大利餐</router-link></dd>
 									</dl>
 								</div>
 								<div>
 									<dl>
-										<dt><a href="#">食材百科</a></dt>
-										<dd><a href="#">蔬菜</a></dd>
-										<dd><a href="#">水果</a></dd>
-										<dd><a href="#">谷类</a></dd>
+										<dt><router-link to='/material'>烘焙</router-link></dt>
+										<dd><router-link to='/material'>蛋糕面包</router-link></dd>
+										<dd><router-link to='/material'>饼干配方</router-link></dd>
+										<dd><router-link to='/material'>甜品点心</router-link></dd>
+									</dl>
+								</div>
+								<br />
+								<div>
+									<dl>
+										<dt><router-link to='/material'>厨房百科</router-link></dt>
+										<dd><router-link to='/material'>烹饪技巧</router-link></dd>
+										<dd><router-link to='/material'>美食专题</router-link></dd>
+									</dl>
+								</div>
+								<div>
+									<dl>
+										<dt><router-link to='/material'>食材百科</router-link></dt>
+										<dd><router-link to='/material'>蔬菜</router-link></dd>
+										<dd><router-link to='/material'>水果</router-link></dd>
+										<dd><router-link to='/material'>谷类</router-link></dd>
 									</dl>
 								</div>
 								<img src="../assets/menu_1.png" alt="" />
 							</div>
 						</li>
 						<li class="position itemTwo">
-							<a href="#"><strong>饮食健康</strong></a>
+							<router-link to='#'><strong :class="{active:topFlag==3}">饮食健康</strong></router-link>
 							<i class="el-icon-arrow-down"></i>
 							<div class="item">
 								<div>
 									<dl>
-										<dt><a href="#">饮食健康</a></dt>
-										<dd><a href="#">饮食小常识</a></dd>
-										<dd><a href="#">饮食小常识</a></dd>
-										<dd><a href="#">食品安全</a></dd>
-										<dd><a href="#">养生妙方</a></dd>
+										<dt><router-link to='#'>饮食健康</router-link></dt>
+										<dd><router-link to='#'>饮食小常识</router-link></dd>
+										<dd><router-link to='#'>饮食小常识</router-link></dd>
+										<dd><router-link to='#'>食品安全</router-link></dd>
+										<dd><router-link to='#'>养生妙方</router-link></dd>
 									</dl>
 								</div>
 								<br />
 								<div>
 									<dl>
-										<dt><a href="#">功能性调理</a></dt>
-										<dd><a href="#">清热去火</a></dd>
-										<dd><a href="#">减肥</a></dd>
-										<dd><a href="#">乌发</a></dd>
-										<dd><a href="#">健脾开胃</a></dd>
+										<dt><router-link to='#'>功能性调理</router-link></dt>
+										<dd><router-link to='#'>清热去火</router-link></dd>
+										<dd><router-link to='#'>减肥</router-link></dd>
+										<dd><router-link to='#'>乌发</router-link></dd>
+										<dd><router-link to='#'>健脾开胃</router-link></dd>
 									</dl>
 								</div>
 								<div>
 									<dl>
-										<dt><a href="#">人群膳食</a></dt>
-										<dd><a href="#">孕妇</a></dd>
-										<dd><a href="#">老人</a></dd>
-										<dd><a href="#">青少年</a></dd>
-										<dd><a href="#">幼儿</a></dd>
+										<dt><router-link to='#'>人群膳食</router-link></dt>
+										<dd><router-link to='#'>孕妇</router-link></dd>
+										<dd><router-link to='#'>老人</router-link></dd>
+										<dd><router-link to='#'>青少年</router-link></dd>
+										<dd><router-link to='#'>幼儿</router-link></dd>
 									</dl>
 								</div>
 								<br />
 								<div>
 									<dl>
-										<dt><a href="#">疾病调理</a></dt>
-										<dd><a href="#">糖尿病</a></dd>
-										<dd><a href="#">高血压</a></dd>
-										<dd><a href="#">痛风</a></dd>
-										<dd><a href="#">胃炎</a></dd>
+										<dt><router-link to='#'>疾病调理</router-link></dt>
+										<dd><router-link to='#'>糖尿病</router-link></dd>
+										<dd><router-link to='#'>高血压</router-link></dd>
+										<dd><router-link to='#'>痛风</router-link></dd>
+										<dd><router-link to='#'>胃炎</router-link></dd>
 									</dl>
 								</div>
 								<div>
 									<dl>
-										<dt><a href="#">脏腑调理</a></dt>
-										<dd><a href="#">感冒</a></dd>
-										<dd><a href="#">补血</a></dd>
-										<dd><a href="#">腹泻</a></dd>
-										<dd><a href="#">活血化瘀</a></dd>
+										<dt><router-link to='#'>脏腑调理</router-link></dt>
+										<dd><router-link to='#'>感冒</router-link></dd>
+										<dd><router-link to='#'>补血</router-link></dd>
+										<dd><router-link to='#'>腹泻</router-link></dd>
+										<dd><router-link to='#'>活血化瘀</router-link></dd>
 									</dl>
 								</div>
 								<img src="../assets/menu_2.png" alt="" />
 							</div>
 						</li>
 						<li>
-							<a href="#"><strong>美食菜单</strong></a>
+							<router-link to='#'><strong :class="{active:topFlag==4}">美食菜单</strong></router-link>
 						</li>
 						<li class="img">
-							<a href="#"><strong>美食达人</strong></a>
+							<router-link to='#'><strong :class="{active:topFlag==5}">美食达人</strong></router-link>
 							<img src="../assets/guan.png"/>
 						</li>
 						<li>
-							<a href="#"><strong>菜谱视频</strong></a>
+							<router-link to='#'><strong :class="{active:topFlag==6}">菜谱视频</strong></router-link>
 						</li>
 						<li>
-							<a href="#"><strong>微信小程序</strong></a>
+							<router-link to='#'><strong :class="{active:topFlag==7}">微信小程序</strong></router-link>
 						</li>
 					</ul>
 				</nav>
@@ -183,6 +183,14 @@
 			}
 		},
 		methods:{
+			changeTopFlag(num) {
+				this.topFlag = num;
+			}
+		},
+		computed:{
+			topFlag(){
+				return this.$store.state.topFlag;
+			}
 		}
 	}
 </script>
@@ -264,7 +272,7 @@
 	
 	.user a:hover {
 		text-decoration: underline;
-		background-color: cornflowerblue;
+		background-color: rgba(	139,69,19,.5);
 	}
 	.nav {
 		width: 100%;
@@ -366,5 +374,11 @@
 	}
 	.position:hover i {
 		display: none;
+	}
+</style>
+<style type="text/css">
+	.btn .el-button {
+		background-color: rgba(	139,69,19,.5);
+		color: white;
 	}
 </style>
