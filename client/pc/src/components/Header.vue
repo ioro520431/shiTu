@@ -17,7 +17,7 @@
 					<div class="user">
 						<p>亲，您还未登录！</p>
 						<a href="#">注册</a>
-						<a href="#">登录</a>
+						<a href="/login">登录</a>
 					</div>
 				</div>
 			</el-col>
