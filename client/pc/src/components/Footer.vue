@@ -92,6 +92,7 @@
 <style scoped>
 	footer {
 		width: 100%;
+		min-width: 1349px;
 		height: 350px;
 		background-color: #DEB887;
 	}

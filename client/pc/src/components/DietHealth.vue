@@ -1,5 +1,5 @@
 <template>
-	<el-row>
+	<el-row class='big_box'>
 		<el-col :span='18' :offset='3' class='content'>
 			<h2>午时是养心的最佳时机，适宜静养，吃完后有条件可以午间小憩一 下。</h2>
 			<nav>
@@ -180,6 +180,10 @@
 </script>
 
 <style scoped>
+	.big_box {
+		width: 100%;
+		min-width: 1349px;
+	}
 	.content {
 		margin-bottom: 40px;
 	}

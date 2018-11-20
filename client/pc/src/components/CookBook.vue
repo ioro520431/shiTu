@@ -1,7 +1,7 @@
 <template>
-	<el-row>
-		<el-col :span='18' :offset='3' class='big_box'>
-			<div class="cook_item">
+	<el-row class='big_box'>
+		<el-col :span='18' :offset='3' class='cook_item'>
+			<div>
 				<h2>世间唯美食不可辜负矣</h2>
 				<el-row>
 					<el-col :span='8' class='left_img'>
@@ -108,10 +108,12 @@
 
 <style scoped>
 	.big_box {
+		width: 100%;
+		min-width: 1349px;
 		margin-bottom: 40px;
 	}
 	
-	.cook_item>h2 {
+	.cook_item h2 {
 		height: 120px;
 		line-height: 120px;
 		text-align: center;

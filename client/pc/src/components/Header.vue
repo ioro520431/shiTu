@@ -196,6 +196,10 @@
 </script>
 
 <style scoped>
+	header {
+		width: 100%;
+		min-width: 1349px;
+	}
 	.top {
 		width: 100%;
 		height: 129px;

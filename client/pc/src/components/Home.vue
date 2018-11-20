@@ -217,6 +217,7 @@
 <style scoped>
 	.content {
 		width: 100%;
+		min-width: 1349px;
 		overflow: auto;
 		overflow: hidden;
 	}

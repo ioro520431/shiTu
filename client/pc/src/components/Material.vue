@@ -1,5 +1,5 @@
 <template>
-	<el-row>
+	<el-row class='big_box'>
 		<el-col :span='18' :offset='3' class='content'>
 			<nav>
 				<div class="clearFloat"></div>
@@ -507,6 +507,10 @@
 </script>
 
 <style scoped>
+	.big_box {
+		width: 100%;
+		min-width: 1349px;
+	}
 	.content {
 		min-height: 600px;
 		margin-top: 20px;
