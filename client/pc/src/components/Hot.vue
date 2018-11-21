@@ -3,12 +3,12 @@
 		<div class="prev_btn" @mouseover="stop" @mouseout="start" @click="prev"></div>
 		<div class="views" @mouseover="stop" @mouseout="start">
 			<span class="item">
-			<a href="javaScript:void(0)" @mouseover="change(0)" :class="{item_active:flag==0}">最新</a>
+			<router-link to='javaScript:void(0)'><span @mouseover="change(0)" :class="{item_active:flag==0}">最新</span></router-link>
 			<span><span class="line"></span>最热：</span>
-			<a href="javaScript:void(0)" @mouseover="change(1)" :class="{item_active:flag==1}">一小时</a>
-			<a href="javaScript:void(0)" @mouseover="change(2)" :class="{item_active:flag==2}">今日</a>
-			<a href="javaScript:void(0)" @mouseover="change(3)" :class="{item_active:flag==3}">七天</a>
-			<a href="#">更多菜谱<i class="el-icon-arrow-right"></i></a>
+			<router-link to='javaScript:void(0)'><span @mouseover="change(1)" :class="{item_active:flag==1}">一小时</span></router-link>
+			<router-link to='javaScript:void(0)'><span @mouseover="change(2)" :class="{item_active:flag==2}">今日</span></router-link>
+			<router-link to='javaScript:void(0)'><span @mouseover="change(3)" :class="{item_active:flag==3}">七天</span></router-link>
+			<router-link to='#'>更多菜谱<i class="el-icon-arrow-right"></i></router-link>
 			</span>
 			<div class="view" :class="{leftOne:flag==0,leftTwo:flag==1,leftThree:flag==2,leftFour:flag==3}">
 				<hotItem></hotItem>

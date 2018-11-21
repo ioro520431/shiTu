@@ -2,9 +2,9 @@
 	<footer>
 		<el-col :span='18' :offset='3'>
 			<el-col class='count' :span='13'>
-				<a href="/">
+				<router-link to='/'>
 					<img src="../assets/logo.png" />
-				</a>
+				</router-link>
 				<p>
 					中国，最大的菜谱库<strong>800,000篇</strong> <br /> 每月，用户访问数量
 					<strong>20,000,000 次</strong> <br /> 每年，菜谱被浏览量
@@ -52,13 +52,13 @@
 			<dl>
 				<dt>友情链接</dt>
 				<dd>
-					<a href="/">美食</a>
+					<router-link to='/'>美食</router-link>
 				</dd>
 				<dd>
-					<a href="/">体质测试</a>
+					<router-link to='/'>体质测试</router-link>
 				</dd>
 				<dd>
-					<a href="/">伊特</a>
+					<router-link to='/'>伊特</router-link>
 				</dd>
 				<dd>
 					<a href="http://gd.qq.com/food/">大粤网美食</a>
@@ -92,6 +92,7 @@
 <style scoped>
 	footer {
 		width: 100%;
+		min-width: 1349px;
 		height: 350px;
 		background-color: #DEB887;
 	}

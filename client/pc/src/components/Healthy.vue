@@ -3,20 +3,20 @@
 		<span class="tip"><a href="#">食品安全</a><em></em></span>
 		<div class="img_box">
 			<div class="images" :class="{topOne:flag==0,topTwo:flag==1,topThree:flag==2}">
-				<a href=""><img src="../../static/img/test0001.jpg"/></a>
-				<a href=""><img src="../../static/img/test0002.jpg"/></a>
-				<a href=""><img src="../../static/img/test0003.jpg"/></a>
+				<router-link to='#'><img src="../../static/img/test0001.jpg"/></router-link>
+				<router-link to='#'><img src="../../static/img/test0002.jpg"/></router-link>
+				<router-link to='#'><img src="../../static/img/test0003.jpg"/></router-link>
 			</div>
 		</div>
 		<div class="titles">
 			<p>
-				<a @mouseover="change(0)" :class="{active:flag==0}" href="#">冻鱼保鲜保营养吗？</a>
+				<router-link to='#'><span @mouseover="change(0)" :class="{active:flag==0}">冻鱼保鲜保营养吗？</span></router-link>
 			</p>
 			<p>
-				<a @mouseover="change(1)" :class="{active:flag==1}" href="#">哪些啤酒谣言还在飞？</a>
+				<router-link to='#'><span @mouseover="change(1)" :class="{active:flag==1}">哪些啤酒谣言还在飞？</span></router-link>
 			</p>
 			<p>
-				<a @mouseover="change(2)" :class="{active:flag==2}" href="#">凉拌或油炸四季豆易中毒</a>
+				<router-link to='#'><span @mouseover="change(2)" :class="{active:flag==2}">凉拌或油炸四季豆易中毒</span></router-link>
 			</p>
 		</div>
 	</div>
