@@ -60,6 +60,7 @@
 	import material from './Material.vue';
 	import hot from './Hot.vue';
 	import healthy from './Healthy.vue';
+	
 	export default {
 		name: 'Home',
 		components: {

@@ -16,7 +16,7 @@
 					</div>
 					<div class="user">
 						<p>亲，您还未登录！</p>
-						<a href="#">注册</a>
+						<a href="/registered">注册</a>
 						<a href="/login">登录</a>
 					</div>
 				</div>
@@ -156,7 +156,7 @@
 							</div>
 						</li>
 						<li>
-							<a href="#"><strong>美食菜单</strong></a>
+							<a href="/Menu"><strong>美食菜单</strong></a>
 						</li>
 						<li class="img">
 							<a href="#"><strong>美食达人</strong></a>

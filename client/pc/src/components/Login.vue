@@ -7,7 +7,6 @@
 					登陆<strong>·</strong>食徒
 					<span class="right_line"></span>
 				</h3>
-				
 				<form class="login_box">
 					<el-input placeholder='请输入账号'></el-input>
 					<el-input placeholder='请输入密码'></el-input>
