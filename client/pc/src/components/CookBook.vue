@@ -359,5 +359,7 @@
 		margin: 28px 0 0 200px;
 		background-color: #8B4513;
 		color: white;
+		font-size: 16px;
+		letter-spacing: 2px;
 	}
 </style>
