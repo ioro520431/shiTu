@@ -16,13 +16,8 @@
 					</div>
 					<div class="user">
 						<p>亲，您还未登录！</p>
-<<<<<<< HEAD
-						<a href="/registered">注册</a>
-						<a href="/login">登录</a>
-=======
 						<router-link to='#'>注册</router-link>
 						<router-link to='/login'>登录</router-link>
->>>>>>> 16eb67ed8d8c5f7b6a7bd21469dc6deb712d0ac6
 					</div>
 				</div>
 			</el-col>
@@ -161,11 +156,7 @@
 							</div>
 						</li>
 						<li>
-<<<<<<< HEAD
-							<a href="/Menu"><strong>美食菜单</strong></a>
-=======
 							<router-link to='#'><strong :class="{active:topFlag==4}">美食菜单</strong></router-link>
->>>>>>> 16eb67ed8d8c5f7b6a7bd21469dc6deb712d0ac6
 						</li>
 						<li class="img">
 							<router-link to='#'><strong :class="{active:topFlag==5}">美食达人</strong></router-link>
