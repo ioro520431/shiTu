@@ -44,6 +44,9 @@
 <script>
 	export default {
 		name: 'Menu',
+		mounted: function() {
+			this.$store.commit('changeTopFlag', 4)
+		},
 		data() {
 			return {
 				show: false,
@@ -327,6 +330,7 @@
 <style scoped>
 	.content {
 		width: 100%;
+		min-width: 1349px;
 		overflow: auto;
 		overflow: hidden;
 	}
@@ -462,6 +466,7 @@
 		position: absolute;
 		margin-top: -32px;
 		background: url(../assets/2.jpg)repeat;
+		opacity: .7;
 		width: 160px;
 		font-size: 14px;
 		display: none;

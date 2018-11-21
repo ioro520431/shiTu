@@ -41,6 +41,8 @@ export default new Router({
       path: '/Menu',
       name: 'Menu',
       component: Menu,
+    },
+    {
       path: '/diet_health',
       name: 'DietHealth',
       component: DietHealth,

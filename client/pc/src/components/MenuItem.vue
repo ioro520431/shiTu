@@ -1,23 +1,25 @@
 <template>
 	<div class="item_box">
-		<span class="tip">抵抗力<em></em></span>
-		<div class="box">
-			<img src="../../static/img/test001.jpg" />
-			<div class="text">
-				<div class="top">
-					<p class="name">香酥反沙馒头条</p>
-					<p class="state">
-						<span>0评论</span>
-						<span>0人气</span>
-					</p>
-					<p class="user">老方小雨</p>
-				</div>
-				<div class="bottom">
-					<p class="time">9步/大概十分钟</p>
-					<p class="way">炸/甜味</p>
+		<router-link to='/cook_book' class='underline_none'>
+			<span class="tip">抵抗力<em></em></span>
+			<div class="box">
+				<img src="../../static/img/test001.jpg" />
+				<div class="text">
+					<div class="top">
+						<p class="name">香酥反沙馒头条</p>
+						<p class="state">
+							<span>0评论</span>
+							<span>0人气</span>
+						</p>
+						<p class="user">老方小雨</p>
+					</div>
+					<div class="bottom">
+						<p class="time">9步/大概十分钟</p>
+						<p class="way">炸/甜味</p>
+					</div>
 				</div>
 			</div>
-		</div>
+		</router-link>
 	</div>
 </template>
 
@@ -33,13 +35,16 @@
 		width: 100%;
 		height: 332px;
 		font-size: 0;
-		cursor: pointer;
+	}
+	.underline_none {
+		text-decoration: none;
 	}
 	.box {
 		overflow: hidden;
 		position: relative;
 		height: 332px;
 	}
+	
 	.tip {
 		position: absolute;
 		z-index: 3;
@@ -54,6 +59,7 @@
 		color: white;
 		box-shadow: 1px 1px 1px 0 #A9A9A9;
 	}
+	
 	.tip em {
 		background-image: url(../assets/gxarrow.png);
 		display: inline-block;
@@ -63,6 +69,7 @@
 		right: 0;
 		bottom: -6px;
 	}
+	
 	.item_box img {
 		position: relative;
 		z-index: 2;
@@ -100,6 +107,7 @@
 	.top .name {
 		font-size: 14px;
 		font-weight: bold;
+		color: #8B4513;
 	}
 	
 	.top .state {
@@ -118,6 +126,7 @@
 		background-image: url(../assets/list_style1_icons.png);
 		background-repeat: no-repeat;
 		padding-left: 45px;
+		color: #8B4513;
 	}
 	
 	.bottom .time {

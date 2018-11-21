@@ -1,24 +1,26 @@
 <template>
 	<div class="item_box">
-		<span class="tip">抵抗力<em></em></span>
-		<div class="box">
-			<div class="curtain">
-				<span class="tips">抵抗力,抵抗力,抵抗力,抵抗力</span>
-				<p class="time">9步/大概十分钟</p>
-				<p class="way">炸/甜味</p>
+		<router-link to='/cook_book' class='underline_none'>
+			<span class="tip">抵抗力<em></em></span>
+			<div class="box">
+				<div class="curtain">
+					<span class="tips">抵抗力,抵抗力,抵抗力,抵抗力</span>
+					<p class="time">9步/大概十分钟</p>
+					<p class="way">炸/甜味</p>
+				</div>
+				<img src="../../static/img/test001.jpg" />
 			</div>
-			<img src="../../static/img/test001.jpg" />
-		</div>
-		<div class="text">
-			<div class="top">
-				<p class="name">香酥反沙馒头条</p>
-				<p class="state">
-					<span>0评论</span>
-					<span>0人气</span>
-				</p>
-				<p class="user">老方小雨</p>
+			<div class="text">
+				<div class="top">
+					<p class="name">香酥反沙馒头条</p>
+					<p class="state">
+						<span>0评论</span>
+						<span>0人气</span>
+					</p>
+					<p class="user">老方小雨</p>
+				</div>
 			</div>
-		</div>
+		</router-link>
 	</div>
 </template>
 
@@ -34,9 +36,10 @@
 		width: 100%;
 		height: 332px;
 		font-size: 0;
-		cursor: pointer;
 	}
-	
+	.underline_none {
+		text-decoration: none;
+	}
 	.box {
 		overflow: hidden;
 		position: relative;
@@ -77,15 +80,16 @@
 	.box .curtain {
 		position: absolute;
 		z-index: 3;
-		background-color: rgba(0,0,0,.5);
+		background-color: rgba(0, 0, 0, .5);
 		width: 238px;
 		height: 188px;
 		right: -238px;
 		top: 0;
 		opacity: 0;
-		transition: all .5s linear; 
+		transition: all .5s linear;
 		padding-top: 50px;
 	}
+	
 	.tips {
 		position: absolute;
 		z-index: 3;
@@ -104,6 +108,7 @@
 		right: 0;
 		opacity: 1;
 	}
+	
 	.text {
 		width: 238px;
 		height: 98px;
@@ -127,6 +132,7 @@
 	.top .name {
 		font-size: 14px;
 		font-weight: bold;
+		color: #8B4513;
 	}
 	
 	.top .state {
@@ -138,6 +144,7 @@
 		font-size: 12px;
 		color: #8B4513;
 	}
+	
 	.curtain p {
 		font-size: 14px;
 		margin-top: 50px;

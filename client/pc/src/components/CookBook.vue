@@ -60,13 +60,14 @@
 					</el-col>
 				</el-row>
 			</div>
-			<el-col :span='18' class='cook_stuff'>
-				<p class="top_text">
-					<strong>“</strong> 这是根据阿呜511老师的南瓜老面包配方调整做的南瓜肉松小餐包，本身南瓜中种面包的松软微甜，加上肉松芝士的微咸，好吃极了。
-					<strong>”</strong>
-				</p>
-				<h2>用料</h2>
-				<div class="stuff_box">
+			<el-col :span='18'>
+				<div class='cook_stuff'>
+					<p class="top_text">
+						<strong>“</strong> 这是根据阿呜511老师的南瓜老面包配方调整做的南瓜肉松小餐包，本身南瓜中种面包的松软微甜，加上肉松芝士的微咸，好吃极了。
+						<strong>”</strong>
+					</p>
+					<h2>用料</h2>
+					<div class="stuff_box">
 					<div class="main_stuff">
 						<p>主料</p>
 						<ul>
@@ -74,24 +75,125 @@
 								<router-link to='#' class='stuff_img'>
 									<img src="../assets/test011.jpg" alt="" />
 								</router-link>
-								<p>
-									<router-link to='#'></router-link>
-									<span></span>
+								<p class="stuff_text">
+									<router-link to='#'>高筋面粉</router-link>
+									<span>300克</span>
 								</p>
 							</li>
 							<li>
 								<router-link to='#' class='stuff_img'>
 									<img src="../assets/test011.jpg" alt="" />
 								</router-link>
-								<p>
-									<router-link to='#'></router-link>
-									<span></span>
+								<p class="stuff_text">
+									<router-link to='#'>高筋面粉</router-link>
+									<span>300克</span>
 								</p>
 							</li>
-							<li></li>
+							<li>
+								<router-link to='#' class='stuff_img'>
+									<img src="../assets/test011.jpg" alt="" />
+								</router-link>
+								<p class="stuff_text">
+									<router-link to='#'>高筋面粉</router-link>
+									<span>300克</span>
+								</p>
+							</li>
+							<li>
+								<router-link to='#' class='stuff_img'>
+									<img src="../assets/test011.jpg" alt="" />
+								</router-link>
+								<p class="stuff_text">
+									<router-link to='#'>高筋面粉</router-link>
+									<span>300克</span>
+								</p>
+							</li>
 						</ul>
 					</div>
-					<div class="more_stuff"></div>
+					<div class="more_stuff">
+						<p>辅料</p>
+						<ul>
+							<li>
+								<router-link to='#'>肉松</router-link>
+								<span>一小碗</span>
+							</li>
+							<li>
+								<router-link to='#'>肉松</router-link>
+								<span>一小碗</span>
+							</li>
+							<li>
+								<router-link to='#'>肉松</router-link>
+								<span>一小碗</span>
+							</li>
+							<li>
+								<router-link to='#'>肉松</router-link>
+								<span>一小碗</span>
+							</li>
+							<li>
+								<router-link to='#'>肉松</router-link>
+								<span>一小碗</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				</div>
+				<div class='measure'>
+					<h3>南瓜肉松小餐包的做法</h3>
+					<div>
+						<div class="measure_item">
+							<p class="serial">1.</p>
+							<div class='measure_content'>
+								<p class="measure_text">
+中种材料全部投入面包机揉成一个面团，室温发酵半小时左右，有些微发酵了，然后再放冰箱冷藏发酵。（因为现在冬天室温低，和好直接放冰箱，发酵非常慢。夏天面团和好时面温就有点高了，可直接放冰箱或是室温几分钟再放。）</p>
+								<p class="measure_img">
+									<img src="../../static/img/test002.jpg" alt="" />
+								</p>
+							</div>
+						</div>
+						<div class="measure_item">
+							<p class="serial">2.</p>
+							<div class='measure_content'>
+								<p class="measure_text">
+中种材料全部投入面包机揉成一个面团，室温发酵半小时左右，有些微发酵了，然后再放冰箱冷藏发酵。（因为现在冬天室温低，和好直接放冰箱，发酵非常慢。夏天面团和好时面温就有点高了，可直接放冰箱或是室温几分钟再放。）</p>
+								<p class="measure_img">
+									<img src="../../static/img/test002.jpg" alt="" />
+								</p>
+							</div>
+						</div>
+						<div class="measure_item">
+							<p class="serial">3.</p>
+							<div class='measure_content'>
+								<p class="measure_text">
+中种材料全部投入面包机揉成一个面团，室温发酵半小时左右，有些微发酵了，然后再放冰箱冷藏发酵。（因为现在冬天室温低，和好直接放冰箱，发酵非常慢。夏天面团和好时面温就有点高了，可直接放冰箱或是室温几分钟再放。）</p>
+								<p class="measure_img">
+									<img src="../../static/img/test002.jpg" alt="" />
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="finished">
+					<h3>南瓜肉松小餐包成品图</h3>
+					<div>
+						 <el-carousel arrow="never" trigger="click">
+						    <el-carousel-item>
+						      	<img src="../../static/img/tet02.jpg"/>
+						    </el-carousel-item>
+						    <el-carousel-item>
+						      	<img src="../../static/img/tet03.jpg"/>
+						    </el-carousel-item>
+						    <el-carousel-item>
+						      	<img src="../../static/img/tet01.jpg"/>
+						    </el-carousel-item>
+						</el-carousel>
+					</div>
+				</div>
+				<div class="skill">
+					<h3>烹饪技巧</h3>
+					<div>
+						<p>1、面粉的牌子不一样，吸水性也不一样，液体不要一次全倒入，留10-20克左右看情况再决定是否添加。</p>
+						<p>2、每个人的烤箱实际温度也不一样，请根据自己的烤箱调节温度和时间。</p>
+						<p>3、南瓜面包本身的颜色金黄的就很漂亮。如果想光亮一些，可在出炉后刷一层融化的黄油或蜂蜜水。</p>
+					</div>
 				</div>
 			</el-col>
 		</el-col>
@@ -302,12 +404,11 @@
 	}
 	
 	.main_stuff {
-		height: 317px;
-		/*background-color: dimgray;*/
 		border-bottom: 1px solid #DCDCDC;
 	}
 	
-	.main_stuff>p {
+	.main_stuff>p,
+	.more_stuff>p {
 		display: inline-block;
 		width: 48px;
 		height: 22px;
@@ -323,7 +424,8 @@
 	ul,li {
 		list-style: none;
 	}
-	.main_stuff>ul {
+	.main_stuff>ul,
+	.more_stuff>ul {
 		width: 674px;
 		display: inline-block;
 		font-size: 0;
@@ -331,24 +433,140 @@
 	}
 	.main_stuff li {
 		display: inline-block;
-		width: 337px;
+		width: 336px;
 		height: 79px;
-		background-color: lightcoral;
+		vertical-align: top;
+		border-bottom: 1px solid #DCDCDC;
+	}
+	.main_stuff li:nth-of-type(2n-1) {
+		border-right: 1px solid #DCDCDC;
 	}
 	.stuff_img {
 		display: inline-block;
 		width: 50px;
 		height: 50px;
 		padding: 14px 0 14px 14px;
+		vertical-align: top;
 	}
 	.stuff_img>img {
 		display: inline-block;
 		width: 50px;
 		height: 50px;
 	}
-	.more_stuff {
-		height: 111px;
-		/*background-color: lightgray;*/
+	.stuff_text {
+		display: inline-block;
+		width: 252px;
+		height: 51px;
+		padding: 14px 10px 14px 10px;
+		line-height: 51px;
+	}
+	.stuff_text>a {
+		font-size: 14px;
+		text-decoration: none;
+		color: #8B4513;
+	}
+	.stuff_text>span {
+		font-size: 12px;
+		float: right;
+		color: #A9A9A9;
+	}
+	.more_stuff li{
+		display: inline-block;
+		width: 312px;
+		height: 27px;
+		vertical-align: top;
+		border-bottom: 1px solid #DCDCDC;
+		padding: 14px 10px 14px 14px;
+		line-height: 27px;
+	}
+	.more_stuff li:nth-of-type(2n-1) {
+		border-right: 1px solid #DCDCDC;
+	}
+	.more_stuff a {
+		font-size: 14px;
+		text-decoration: none;
+		color: #8B4513;
+	}
+	.more_stuff span {
+		font-size: 12px;
+		float: right;
+		color: #A9A9A9;
+	}
+	.measure {
+		margin-top: 20px;
+		background-color: white;
+	}
+	.measure>h3,
+	.finished>h3,
+	.skill>h3 {
+		width: 734px;
+		height: 66px;
+		padding-left: 24px;
+		line-height: 67px;
+		font-size: 24px;
+		font-weight: normal;
+		border-bottom: 1px solid #DCDCDC;
+		color: #8B4513;
+	}
+	.measure>div {
+		width: 100%;
+		margin-top: 20px;
+	}
+	.measure_item {
+		width: 100%;
+		font-size: 0;
+	}
+	.serial {
+		display: inline-block;
+		width: 100px;
+		height: 50px;
+		vertical-align: top;
+		font-style: italic;
+		font-size: 50px;
+		color: #8B4513;
+		text-align: center;
+	}
+	.measure_content {
+		display: inline-block;
+		width: 638px;
+		padding-right: 20px;
+	}
+	.measure_text {
+		width: 638px;
+		padding: 10px 20px 10px 0;
+		font-size: 14px;
+		line-height: 26px;
+		color: #808080;
+	}
+	.measure_img>img {
+		width: 638px;
+	}
+	.finished {
+		background-color: white;
+		padding-bottom: 20px;
+	}
+	.finished>div {
+		width: 638px;
+		margin-left: 100px;
+		padding-right: 20px;
+		margin-top: 20px;
+	}
+	.el-carousel__item>img {
+		width: 635px;
+		height: 508px;
+		margin-top: -37px;
+	}
+	.skill {
+		background-color: white;
+	}
+	.skill>div {
+		padding: 10px 10px 10px 100px;
+		line-height: 24px;
+		font-size: 14px;
+	}
+	.skill p {
+		color: 	#808080;
+		padding: 5px 0;
 	}
 </style>
 <style type="text/css">
@@ -361,5 +579,8 @@
 		color: white;
 		font-size: 16px;
 		letter-spacing: 2px;
+	}
+	.finished .el-carousel__container {
+		height: 434px;
 	}
 </style>

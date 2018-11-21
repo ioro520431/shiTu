@@ -13,21 +13,20 @@
 					<el-input placeholder='请再次输入密码'></el-input>
 					<el-input placeholder='昵称'></el-input>
 					<el-radio v-model="radio" label="1">男</el-radio>
-                    <el-radio v-model="radio" label="2">女</el-radio>
-                     <div class="block">
-	          <el-cascader :options="options" v-model="selectedOptions" @change="handleChange"placeholder='选择居住地'>
-</el-cascader>
-         </div>
-                <Hometown></Hometown>
-         		<Data></Data>
-         		<div class="nl_loginitem">
-         		<label>
+					<el-radio v-model="radio" label="2">女</el-radio>
+					<div class="block">
+						<el-cascader :options="options" v-model="selectedOptions" @change="handleChange" placeholder='选择居住地'>
+						</el-cascader>
+					</div>
+					<Hometown></Hometown>
+					<Data></Data>
+					<div class="nl_loginitem">
+						<label>
 				<input class="rule"  type="checkbox">我已阅读并同意<a href="#">食坊用户使用协议</a>
-			</label>	
-         		</div>
-         
+			</label>
+					</div>
 
-         	<input type="button" class="button" value="注册">
+					<input type="button" class="button" value="注册">
 				</form>
 			</el-col>
 		</el-row>
@@ -35,15 +34,18 @@
 </template>
 
 <script>
-import Data from './Data.vue';
-import Hometown from './Hometown.vue';
-export default {
-	 name: 'registered',
-	 components: {
-		Data,
-		Hometown
+	import Data from './Data.vue';
+	import Hometown from './Hometown.vue';
+	export default {
+		name: 'registered',
+		mounted: function() {
+			this.$store.commit('changeTopFlag', 0)
 		},
-	data() {
+		components: {
+			Data,
+			Hometown
+		},
+		data() {
 			return {
 				radio: '1',
 				options: [{
@@ -111,7 +113,7 @@ export default {
 							value: 'xuanwei',
 							label: '宣威市'
 						}]
-						}, {
+					}, {
 						value: 'yuxi',
 						label: '玉溪市',
 						children: [{
@@ -142,7 +144,7 @@ export default {
 							value: 'yuanjiang',
 							label: '元江哈尼族彝族傣族自治县'
 						}]
-						}, {
+					}, {
 						value: 'baoshan',
 						label: '保山市',
 						children: [{
@@ -161,7 +163,7 @@ export default {
 							value: 'changning',
 							label: '昌宁县'
 						}]
-						}, {
+					}, {
 						value: 'zhaotong',
 						label: '昭通市',
 						children: [{
@@ -192,7 +194,7 @@ export default {
 							value: 'yiliang',
 							label: '宜良县'
 						}]
-						}, {
+					}, {
 						value: 'lijiang',
 						label: '丽江市',
 						children: [{
@@ -233,7 +235,7 @@ export default {
 						}, {
 							value: 'longquan',
 							label: '龙泉驿站'
-						},{
+						}, {
 							value: 'qinbei',
 							label: '清白江区'
 						}, {
@@ -260,8 +262,8 @@ export default {
 						}, {
 							value: 'chongzhou',
 							label: '崇州市'
-							}]
-					
+						}]
+
 					}, {
 						value: 'zigongshi',
 						label: '自贡市',
@@ -342,7 +344,7 @@ export default {
 							label: '愦阳市'
 						}]
 					}]
-					}, {
+				}, {
 					value: 'zhejiang',
 					label: '浙江省',
 					children: [{
@@ -363,7 +365,7 @@ export default {
 						}, {
 							value: 'jiande',
 							label: '建德市'
-						},{
+						}, {
 							value: 'yuhang',
 							label: '余杭区'
 						}, {
@@ -385,7 +387,7 @@ export default {
 							value: 'xiacheng',
 							label: '下城区'
 						}]
-					
+
 					}, {
 						value: 'ninbo',
 						label: '宁波市',
@@ -407,7 +409,7 @@ export default {
 						}, {
 							value: 'yuyao',
 							label: '余姚市'
-						},{
+						}, {
 							value: 'xiangshan',
 							label: '象山县'
 						}]
@@ -477,10 +479,10 @@ export default {
 							value: 'songyang',
 							label: '松阳县'
 						}]
-					
+
 					}]
-					
-					}, {
+
+				}, {
 					value: 'jianfsu',
 					label: '江苏省',
 					children: [{
@@ -501,7 +503,7 @@ export default {
 						}, {
 							value: 'pukou',
 							label: '浦口区 '
-						},{
+						}, {
 							value: 'yuhuatai',
 							label: '雨花台区'
 						}, {
@@ -516,8 +518,8 @@ export default {
 						}, {
 							value: 'xixia',
 							label: '栖霞区'
-							}]
-					
+						}]
+
 					}, {
 						value: 'wuxi',
 						label: '无锡市',
@@ -597,7 +599,7 @@ export default {
 							value: 'qidong',
 							label: '启东市'
 						}]
-					
+
 					}]
 				}],
 				selectedOptions: [],
@@ -610,16 +612,16 @@ export default {
 				console.log(value);
 			}
 		}
-};
+	};
 </script>
 
 <style scoped>
 	.content {
-		height: 992px;
 		background-color: white;
 		margin-top: 40px;
 		margin-bottom: 40px;
 	}
+	
 	h3 {
 		height: 43px;
 		margin: 40px auto;
@@ -629,9 +631,11 @@ export default {
 		font-weight: normal;
 		color: #8B4513;
 	}
+	
 	strong {
 		font-weight: bolder;
 	}
+	
 	.left_line,
 	.right_line {
 		display: inline-block;
@@ -640,60 +644,62 @@ export default {
 		margin: 0 15px;
 		vertical-align: middle;
 	}
+	
 	.left_line {
 		background-image: url(../assets/nl_title_left.png);
 	}
+	
 	.right_line {
 		background-image: url(../assets/nl_title_right.png);
 	}
+	
 	.registered_box {
 		width: 320px;
-		height: 207px;
 		margin: 50px auto 0;
 	}
-	/*.registered_box el-radio{
-		font-size: 30px;
-	}*/
-	
-	
 </style>
 <style type="text/css">
 	.registered_box .el-input__inner {
 		margin: 10px auto;
 	}
-	.button{
-	display: inline-block;
-	vertical-align: top;
-	border: 1px solid #db432e;
-	border-radius: 4px;
-    line-height: 40px;
-    font-size: 15px;
-    color: #fff;
-    padding: 0px 24px;
-    font-family: "Hiragino Sans GB","冬青黑体","Microsoft Yahei","微软雅黑";
-    background: #ec5541;
-    cursor: pointer;
-    margin: 16px 100px;
+	
+	.button {
+		display: inline-block;
+		vertical-align: top;
+		border: 1px solid #db432e;
+		border-radius: 4px;
+		line-height: 40px;
+		font-size: 15px;
+		color: #fff;
+		padding: 0px 24px;
+		font-family: "Hiragino Sans GB", "冬青黑体", "Microsoft Yahei", "微软雅黑";
+		background: #ec5541;
+		cursor: pointer;
+		margin: 16px 100px;
 	}
-	.nl_loginitem{
-	font-size: 14px;
-    line-height: 22px;
+	
+	.nl_loginitem {
+		font-size: 14px;
+		line-height: 22px;
 	}
+	
 	.nl_loginitem label {
-    color: #666;
-    font-size: 13px;
-    line-height: 22px;
-    }
-	.nl_loginitem a{
+		color: #666;
+		font-size: 13px;
+		line-height: 22px;
+	}
+	
+	.nl_loginitem a {
 		color: #ec5541;
 	}
-	a{
-	text-decoration: none;
-	margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent;
+	
+	a {
+		text-decoration: none;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		vertical-align: baseline;
+		background: transparent;
 	}
 </style>
