@@ -7,6 +7,8 @@ import Login from '@/components/Login.vue'
 import Material from '@/components/Material.vue'
 import DietHealth from '@/components/DietHealth.vue'
 import CookBook from '@/components/CookBook.vue'
+import RecipeVideo from '@/components/RecipeVideo.vue'
+import VedioPlayer from '@/components/VedioPlayer.vue'
 
 Vue.use(Router)
 
@@ -51,6 +53,16 @@ export default new Router({
       path: '/cook_book',
       name: 'CookBook',
       component: CookBook,
+    },
+    {
+      path: '/recipe_video',
+      name: 'RecipeVideo',
+      component: RecipeVideo,
+    },
+    {
+      path: '/vedio_layer',
+      name: 'VedioPlayer',
+      component: VedioPlayer,
     }
   ],
   mode: 'history'

@@ -163,7 +163,7 @@
 							<img src="../assets/guan.png"/>
 						</li>
 						<li>
-							<router-link to='#'><strong :class="{active:topFlag==6}">菜谱视频</strong></router-link>
+							<router-link to='/recipe_video'><strong :class="{active:topFlag==6}">菜谱视频</strong></router-link>
 						</li>
 						<li>
 							<router-link to='#'><strong :class="{active:topFlag==7}">微信小程序</strong></router-link>

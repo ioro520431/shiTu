@@ -483,7 +483,6 @@
 		},
 		methods: {
 			handleChange(val) {
-				console.log(val);
 			},
 			changeMenu(flag) {
 				this.showMenu = flag;
