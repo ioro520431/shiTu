@@ -132,9 +132,11 @@
 	.top .name {
 		font-size: 14px;
 		font-weight: bold;
+		color: 	#808080;
+	}
+	.top .name:hover {
 		color: #8B4513;
 	}
-	
 	.top .state {
 		font-size: 12px;
 		color: #A9A9A9;
@@ -144,7 +146,6 @@
 		font-size: 12px;
 		color: #8B4513;
 	}
-	
 	.curtain p {
 		font-size: 14px;
 		margin-top: 50px;

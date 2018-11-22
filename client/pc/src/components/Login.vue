@@ -7,17 +7,17 @@
 					登陆<strong>·</strong>食徒
 					<span class="right_line"></span>
 				</h3>
-				<form class="login_box">
-					<el-input placeholder='请输入账号' v-model='name'></el-input>
-					<el-input type='password' placeholder='请输入密码' v-model='password'></el-input>
+				<div class="login_box">
+					<el-input placeholder='请输入账号' v-model='u_name'></el-input>
+					<el-input type='password' placeholder='请输入密码' v-model='u_pwd'></el-input>
 					<p class="forget">
 						<router-link to='#'>忘记密码?</router-link>
 					</p>
-					<el-button>登录</el-button>
+					<el-button type='button' @click='login'>登录</el-button>
 					<p class="register">
-						<router-link to='#'>还不是食徒，立即成为食徒 <i class="el-icon-arrow-down"></i></router-link>
+						<router-link to='/registered'>还不是食徒，立即成为食徒 <i class="el-icon-arrow-down"></i></router-link>
 					</p>
-				</form>
+				</div>
 			</el-col>
 		</el-row>
 	</div>
@@ -28,12 +28,36 @@
 		name: 'Login',
 		data(){
 			return {
-				name:'',
-				password:''
+				u_name:'',
+				u_pwd:''
 			}
 		},
 		mounted: function() {
 			this.$store.commit('changeTopFlag', 0)
+		},
+		methods:{
+			login(){
+				let _this = this;
+				_this.$http({
+					method:'post',
+					url:'/login',
+					data:{
+						u_name:_this.$md5(_this.u_name),
+						u_pwd:_this.$md5(_this.u_pwd)
+					}
+				}).then(response=>{
+					if(response.data.state == 2){
+						_this.$store.commit('setUserState',{
+							flag : true,
+							u_name : response.data.name
+						});
+						_this.$router.replace('/home');
+					}
+					else {
+						alert(response.data.msg);
+					}
+				})
+			}
 		}
 	}
 </script>

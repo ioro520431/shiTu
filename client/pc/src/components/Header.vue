@@ -14,10 +14,19 @@
 							<el-button>搜索</el-button>
 						</div>
 					</div>
-					<div class="user">
+					<div class="user" v-if="!this.$store.state.userState.flag">
 						<p>亲，您还未登录！</p>
 						<router-link to='/registered'>注册</router-link>
 						<router-link to='/login'>登录</router-link>
+					</div>
+					<div class="sign_in" v-if="this.$store.state.userState.flag">
+						<router-link to='#'>
+							<img src="../../static/img/test_user.jpg"/>
+							<span class="name">{{this.$store.state.userState.u_name}}</span>
+						</router-link>
+						<router-link to='#' class='link'>我的收藏</router-link>
+						<router-link to='#' class='link'>发布菜谱</router-link>
+						<span class='quit' @click='userQuit'>注销</span>
 					</div>
 				</div>
 			</el-col>
@@ -185,6 +194,18 @@
 		methods:{
 			changeTopFlag(num) {
 				this.topFlag = num;
+			},
+			userQuit(){
+				let _this = this;
+				_this.$http({
+					method:'get',
+					url:'/user_quit'
+				}).then(response=>{
+					if(response.data.state==1){
+						_this.$store.commit('setUserState',{flag:false});
+						alert(response.data.msg)
+					}
+				})
 			}
 		},
 		computed:{
@@ -251,9 +272,55 @@
 		font-size: 12px;
 		vertical-align: top;
 		float: right;
-		margin-right: 25px ;
+		margin-right: 25px;
 	}
-	
+	.sign_in {
+		display: inline-block;
+		height: 83px;
+		font-size: 12px;
+		vertical-align: top;
+		padding-top: 46px;
+		float: right;
+		font-size: 0;
+	}
+	.content .sign_in img {
+		width: 36px;
+		height: 36px;
+		vertical-align: top;
+		margin: 0;
+	}
+	.sign_in>a {
+		text-decoration: none;
+	}
+	.sign_in .name {
+		height: 36px;
+		line-height: 36px;
+		font-size: 12px;
+		vertical-align: top;
+		padding: 0 4px;
+		color: #8B4513;
+	}
+	.sign_in .link,
+	.sign_in .quit {
+		display: inline-block;
+		height: 36px;
+		line-height: 36px;
+		padding: 0 5px;
+		font-size: 12px;
+		color: gray;
+	}
+	.sign_in .quit {
+		cursor: pointer;
+		color: darkslategray;
+	}
+	.sign_in .quit:hover {
+		color: red;
+		text-decoration: underline;
+	}
+	.sign_in .link:hover {
+		color: #F5F5F5;
+		text-decoration: underline;
+	}
 	.user p {
 		display: inline-block;
 		height: 28px;
