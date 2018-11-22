@@ -3,20 +3,21 @@
 		<router-link to='/cook_book' class='underline_none'>
 			<span class="tip">抵抗力<em></em></span>
 			<div class="box">
+				<div class="curtain">
+					<span class="tips">抵抗力,抵抗力,抵抗力,抵抗力</span>
+					<p class="time">9步/大概十分钟</p>
+					<p class="way">炸/甜味</p>
+				</div>
 				<img src="../../static/img/test001.jpg" />
-				<div class="text">
-					<div class="top">
-						<p class="name">香酥反沙馒头条</p>
-						<p class="state">
-							<span>0评论</span>
-							<span>0人气</span>
-						</p>
-						<p class="user">老方小雨</p>
-					</div>
-					<div class="bottom">
-						<p class="time">9步/大概十分钟</p>
-						<p class="way">炸/甜味</p>
-					</div>
+			</div>
+			<div class="text">
+				<div class="top">
+					<p class="name">香酥反沙馒头条</p>
+					<p class="state">
+						<span>0评论</span>
+						<span>0人气</span>
+					</p>
+					<p class="user">老方小雨</p>
 				</div>
 			</div>
 		</router-link>
@@ -25,7 +26,7 @@
 
 <script>
 	export default {
-		name: 'MenuItem'
+		name: 'FoodItem'
 	}
 </script>
 
@@ -42,7 +43,7 @@
 	.box {
 		overflow: hidden;
 		position: relative;
-		height: 332px;
+		height: 238px;
 	}
 	
 	.tip {
@@ -70,34 +71,58 @@
 		bottom: -6px;
 	}
 	
-	.item_box img {
+	.box img {
 		position: relative;
 		z-index: 2;
 		width: 238px;
 	}
 	
-	.text {
+	.box .curtain {
 		position: absolute;
-		z-index: 1;
-		bottom: -94px;
+		z-index: 3;
+		background-color: rgba(0, 0, 0, .5);
 		width: 238px;
 		height: 188px;
+		right: -238px;
+		top: 0;
+		opacity: 0;
+		transition: all .5s linear;
+		padding-top: 50px;
+	}
+	
+	.tips {
+		position: absolute;
+		z-index: 3;
+		display: inline-block;
+		height: 32px;
+		padding: 0 10px;
+		line-height: 32px;
+		top: 8px;
+		right: 0px;
+		background-color: #60a531;
+		font-size: 12px;
+		color: white;
+	}
+	
+	.box:hover .curtain {
+		right: 0;
+		opacity: 1;
+	}
+	
+	.text {
+		width: 238px;
+		height: 98px;
 		transition: all .5s;
 	}
 	
-	.top,
-	.bottom {
+	.top {
 		padding: 15px;
 		width: 208px;
-		height: 64px;
+		height: 68px;
 	}
 	
 	.top {
 		background-color: white;
-	}
-	
-	.bottom {
-		background-color: #E1FFFF;
 	}
 	
 	.text p {
@@ -120,24 +145,20 @@
 		color: #8B4513;
 	}
 	
-	.bottom p {
+	.curtain p {
 		font-size: 14px;
-		margin-top: 10px;
+		margin-top: 50px;
 		background-image: url(../assets/list_style1_icons.png);
 		background-repeat: no-repeat;
-		padding-left: 45px;
-		color: #8B4513;
+		padding-left: 100px;
+		color: white;
 	}
 	
-	.bottom .time {
-		background-position: 0 -132px;
+	.curtain .time {
+		background-position: 50px -132px;
 	}
 	
-	.bottom .way {
-		background-position: 0 -49px;
-	}
-	
-	.item_box:hover .text {
-		bottom: 0px;
+	.curtain .way {
+		background-position: 50px -49px;
 	}
 </style>

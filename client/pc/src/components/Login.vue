@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="big_box">
 		<el-row>
 			<el-col :span='18' :offset='3' class='content'>
 				<h3>
@@ -39,6 +39,10 @@
 </script>
 
 <style scoped>
+	.big_box {
+		width: 100%;
+		min-width: 1349px;
+	}
 	.content {
 		height: 442px;
 		background-color: white;

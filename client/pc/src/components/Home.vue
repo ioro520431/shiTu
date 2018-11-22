@@ -60,6 +60,7 @@
 	import foodMaterial from './FoodMaterial.vue';
 	import hot from './Hot.vue';
 	import healthy from './Healthy.vue';
+	
 	export default {
 		name: 'Home',
 		components: {
@@ -217,6 +218,7 @@
 <style scoped>
 	.content {
 		width: 100%;
+		min-width: 1349px;
 		overflow: auto;
 		overflow: hidden;
 	}
