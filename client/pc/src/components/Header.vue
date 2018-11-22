@@ -116,11 +116,19 @@
 							<div class="item">
 								<div>
 									<dl>
+<<<<<<< HEAD
+										<dt><router-link to='#'>饮食健康</router-link></dt>
+										<dd><router-link to='/common'>饮食小常识</router-link></dd>
+										<dd><router-link to='#'>饮食小常识</router-link></dd>
+										<dd><router-link to='#'>食品安全</router-link></dd>
+										<dd><router-link to='#'>养生妙方</router-link></dd>
+=======
 										<dt><router-link to='/diet_health?id=000'>饮食健康</router-link></dt>
 										<dd><router-link to='/diet_health?id=011'>饮食小常识</router-link></dd>
 										<dd><router-link to='/diet_health?id=014'>美容瘦身</router-link></dd>
 										<dd><router-link to='/diet_health?id=022'>食品安全</router-link></dd>
 										<dd><router-link to='/diet_health?id=013'>养生妙方</router-link></dd>
+>>>>>>> 35a2c57c474f46bd92201783110bb9e4e9f0e54d
 									</dl>
 								</div>
 								<br />
