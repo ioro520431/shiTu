@@ -108,7 +108,7 @@
 								<div>
 									<dl>
 										<dt><router-link to='#'>饮食健康</router-link></dt>
-										<dd><router-link to='#'>饮食小常识</router-link></dd>
+										<dd><router-link to='/common'>饮食小常识</router-link></dd>
 										<dd><router-link to='#'>饮食小常识</router-link></dd>
 										<dd><router-link to='#'>食品安全</router-link></dd>
 										<dd><router-link to='#'>养生妙方</router-link></dd>

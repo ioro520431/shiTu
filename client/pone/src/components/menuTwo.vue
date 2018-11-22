@@ -1,9 +1,7 @@
 <template>
 	<div>
-			<mt-header fixed title="早餐"></mt-header>
-			
-			
-
+	    <mt-header fixed title="午餐"></mt-header>
+	    
 	    <div>
 						<div >
 							<div class="introduce4">
@@ -152,9 +150,13 @@
 						
 					</div>
 	    
-	    		
-			
-					<mt-tabbar class="Tabbar" fixed>
+	    
+	    
+	    
+	    
+	    
+	    
+	    		<mt-tabbar class="Tabbar" fixed>
 			<router-link to="/all">
 				<mt-tab-item id="菜谱大全">
 					<img slot="icon" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4119227573,3586244744&fm=200&gp=0.jpg"> 菜谱大全
@@ -180,8 +182,8 @@
 			</router-link>
 		</mt-tabbar>
 
-			
-	</div>		
+	    
+	</div>
 </template>
 
 <script>
@@ -192,7 +194,7 @@
 	import { Navbar, TabItem } from 'mint-ui';
 	
 	export default {
-		name: 'Home',
+		name: 'MenuTwo',
 		data() {
 			return {
 			}
@@ -201,7 +203,7 @@
 </script>
 
 <style scoped>
-	.Tabbar {
+   .Tabbar {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
