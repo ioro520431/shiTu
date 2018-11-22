@@ -1,6 +1,6 @@
 <template>
 	<div class="box">
-		<router-link to='#' v-for='(item,index) in list' :key='index'>
+		<router-link to='/detail' v-for='(item,index) in list' :key='index'>
 			<img :src="item.src" />
 			<span class="text">
 				<span class="block"></span>

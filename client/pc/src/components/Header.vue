@@ -165,7 +165,7 @@
 							</div>
 						</li>
 						<li>
-							<router-link to='/Menu'><strong :class="{active:topFlag==4}">美食菜单</strong></router-link>
+							<router-link to='/menu'><strong :class="{active:topFlag==4}">美食菜单</strong></router-link>
 						</li>
 						<li class="img">
 							<router-link to='#'><strong :class="{active:topFlag==5}">美食达人</strong></router-link>

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import registered from'@/components/registered'
+import registered from'@/components/registered.vue'
 import Menu from'@/components/Menu.vue'
 import Home from '@/components/Home.vue'
 import Login from '@/components/Login.vue'
@@ -13,6 +13,7 @@ import MenuDescribe from '@/components/MenuDescribe.vue'
 import RecipeVideo from '@/components/RecipeVideo.vue'
 import VedioPlayer from '@/components/VedioPlayer.vue'
 import Personal from '@/components/Personal.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -48,7 +49,7 @@ export default new Router({
       component: registered,
     },
     {
-      path: '/Menu',
+      path: '/menu',
       name: 'Menu',
       component: Menu,
     },
@@ -78,12 +79,12 @@ export default new Router({
       component: Personal,
     },
     {
-      path: '/Detail',
+      path: '/detail',
       name: 'Detail',
       component: Detail,
     },
     {
-    	path: '/MenuDescribe',
+    	path: '/menuDescribe',
       name: 'MenuDescribe',
       component: MenuDescribe,
     }

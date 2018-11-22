@@ -11,7 +11,7 @@
 					</div>
 					<div class="cen_left">
 						<h1>橘子
-					<a href="#"></a>
+					<router-link to="#"></router-link>
 					</h1>
 						<p class="p1"></p>
 						<p class="p2">
@@ -24,31 +24,31 @@
 					<div class="cen_right">
 						<ul>
 							<li class="green">
-								<a href="#">气虚质</a>
+								<router-link to="#">气虚质</router-link>
 							</li>
 							<li class="green">
-								<a href="#">气郁质</a>
+								<router-link to="#">气郁质</router-link>
 							</li>
 							<li class="green">
-								<a href="#">湿热质</a>
+								<router-link to="#">湿热质</router-link>
 							</li>
 							<li class="green">
-								<a href="#">特秉质</a>
+								<router-link to="#">特秉质</router-link>
 							</li>
 							<li class="green">
-								<a href="#">阴虚质</a>
+								<router-link to="#">阴虚质</router-link>
 							</li>
 							<li class="green">
-								<a href="#">血瘀质</a>
+								<router-link to="#">血瘀质</router-link>
 							</li>
 							<li class="green">
-								<a href="#">平和质</a>
+								<router-link to="#">平和质</router-link>
 							</li>
 							<li class="red">
-								<a href="#">痰湿质</a>
+								<router-link to="#">痰湿质</router-link>
 							</li>
 							<li class="red">
-								<a href="#">阳虚质</a>
+								<router-link to="#">阳虚质</router-link>
 							</li>
 						</ul>
 					</div>
@@ -56,7 +56,8 @@
 
 				<div class="middle_box">
 					<h2 class="title1">
-    	 <a href="#">橘子的做法大全</a></h2>
+    	 				<router-link to="#">橘子的做法大全</router-link>
+					</h2>
 
 					<el-row :gutter='20'>
 						<el-col :span='18'>
@@ -137,121 +138,121 @@
 
 									<li class="ji">
 										<div class="t">忌</div>
-										<a href="#" class="img"><img src="../../static/img/test01.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
 										<span class="add "></span>
-										<a href="#" class="img"><img src="../../static/img/test03.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
 										<p>
-											<a href="# ">橘子 + 大闸蟹，令患软痈</a>
+											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
 										</p>
 									</li>
 
 									<li class="ji">
 										<div class="t">忌</div>
-										<a href="#" class="img"><img src="../../static/img/test01.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
 										<span class="add "></span>
-										<a href="#" class="img"><img src="../../static/img/test03.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
 										<p>
-											<a href="# ">橘子 + 大闸蟹，令患软痈</a>
+											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
 										</p>
 									</li>
 
 									<li class="ji">
 										<div class="t">忌</div>
-										<a href="#" class="img"><img src="../../static/img/test01.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
 										<span class="add "></span>
-										<a href="#" class="img"><img src="../../static/img/test03.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
 										<p>
-											<a href="# ">橘子 + 大闸蟹，令患软痈</a>
+											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
 										</p>
 									</li>
 
 									<li class="ji">
 										<div class="t">忌</div>
-										<a href="#" class="img"><img src="../../static/img/test01.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
 										<span class="add "></span>
-										<a href="#" class="img"><img src="../../static/img/test03.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
 										<p>
-											<a href="# ">橘子 + 大闸蟹，令患软痈</a>
+											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
 										</p>
 									</li>
 
 									<li class="ji">
 										<div class="t">忌</div>
-										<a href="#" class="img"><img src="../../static/img/test01.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
 										<span class="add "></span>
-										<a href="#" class="img"><img src="../../static/img/test03.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
 										<p>
-											<a href="# ">橘子 + 大闸蟹，令患软痈</a>
+											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
 										</p>
 									</li>
 
 									<li class="ji">
 										<div class="t">忌</div>
-										<a href="#" class="img"><img src="../../static/img/test01.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
 										<span class="add "></span>
-										<a href="#" class="img"><img src="../../static/img/test03.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
 										<p>
-											<a href="# ">橘子 + 大闸蟹，令患软痈</a>
+											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
 										</p>
 									</li>
 
 									<li class="ji">
 										<div class="t">忌</div>
-										<a href="#" class="img"><img src="../../static/img/test01.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
 										<span class="add "></span>
-										<a href="#" class="img"><img src="../../static/img/test03.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
 										<p>
-											<a href="# ">橘子 + 大闸蟹，令患软痈</a>
+											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
 										</p>
 									</li>
 
 									<li class="ji">
 										<div class="t">忌</div>
-										<a href="#" class="img"><img src="../../static/img/test01.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
 										<span class="add "></span>
-										<a href="#" class="img"><img src="../../static/img/test03.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
 										<p>
-											<a href="# ">橘子 + 大闸蟹，令患软痈</a>
+											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
 										</p>
 									</li>
 
 									<li class="ji">
 										<div class="t">忌</div>
-										<a href="#" class="img"><img src="../../static/img/test01.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
 										<span class="add "></span>
-										<a href="#" class="img"><img src="../../static/img/test03.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
 										<p>
-											<a href="# ">橘子 + 大闸蟹，令患软痈</a>
+											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
 										</p>
 									</li>
 
 									<li class="ji">
 										<div class="t">忌</div>
-										<a href="#" class="img"><img src="../../static/img/test01.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
 										<span class="add "></span>
-										<a href="#" class="img"><img src="../../static/img/test03.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
 										<p>
-											<a href="# ">橘子 + 大闸蟹，令患软痈</a>
+											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
 										</p>
 									</li>
 
 									<li class="ji">
 										<div class="t">忌</div>
-										<a href="#" class="img"><img src="../../static/img/test01.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
 										<span class="add "></span>
-										<a href="#" class="img"><img src="../../static/img/test03.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
 										<p>
-											<a href="# ">橘子 + 大闸蟹，令患软痈</a>
+											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
 										</p>
 									</li>
 
 									<li class="ji">
 										<div class="t">忌</div>
-										<a href="#" class="img"><img src="../../static/img/test01.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
 										<span class="add "></span>
-										<a href="#" class="img"><img src="../../static/img/test03.jpg" /></a>
+										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
 										<p>
-											<a href="# ">橘子 + 大闸蟹，令患软痈</a>
+											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
 										</p>
 									</li>
 
@@ -283,6 +284,9 @@
 	import menuItem from './MenuItem.vue'
 	export default {
 		name: 'Detail',
+		mounted: function() {
+			this.$store.commit('changeTopFlag', 2)
+		},
 		components: {
 			menuItem
 		},
@@ -454,10 +458,12 @@
 		position: absolute;
 		right: 0;
 	}
+	
 	.chose_items:hover {
 		width: 716px;
 		z-index: 999;
 	}
+	
 	.chose_items .title1 {
 		font-size: 24px;
 		line-height: 50px;
@@ -498,6 +504,7 @@
 	.clearfix {
 		margin-top: 10px;
 	}
+	
 	li.ji div.t {
 		color: #ff3232;
 		margin-left: 20px;

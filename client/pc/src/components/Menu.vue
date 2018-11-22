@@ -4,15 +4,15 @@
 			<div class="top">
 				<p>
 					菜单是你的一桌饭
-					<a class="hot" href="#">最热</a>
-					<a class="xin" href="#">最新</a>
+					<router-link class="hot" to="#">最热</router-link>
+					<router-link class="xin" to="#">最新</router-link>
 
 				</p>
 			</div>
 
 			<div class="box" v-for='item in theme'>
 				<div class="box-right">
-					<a href="#">{{item.title}}</a>
+					<router-link to="#">{{item.title}}</router-link>
 					<p><span>{{item.em}}</span>{{item.left}}</p>
 				</div>
 
@@ -20,16 +20,16 @@
 					<dl>
 						<dd><strong class="tag">{{item.time}}</strong></dd>
 					</dl>
-					<a class="author" href="#"><img :src="item.author">
+					<router-link class="author" to="#"><img :src="item.author">
 						<strong>{{item.name}}</strong>
-					</a>
+					</router-link>
 				</div>
 				<ul class="cplist">
 					<li class="img" v-for='item in item.images' :key="item.id">
-						<a href="#">
+						<router-link to="/menuDescribe">
 							<img :src="item.imgurl" />
 							<div class="foot-text">{{item.txt}}</div>
-						</a>
+						</router-link>
 					</li>
 				</ul>
 			</div>
