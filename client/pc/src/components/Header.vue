@@ -24,7 +24,7 @@
 							<img src="../../static/img/test_user.jpg"/>
 							<span class="name">{{this.$store.state.userState.u_name}}</span>
 						</router-link>
-						<router-link to='#' class='link'>我的收藏</router-link>
+						<router-link to='/personal' class='link'>我的收藏</router-link>
 						<router-link to='#' class='link'>发布菜谱</router-link>
 						<span class='quit' @click='userQuit'>注销</span>
 					</div>

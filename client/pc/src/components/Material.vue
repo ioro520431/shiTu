@@ -457,6 +457,9 @@
 								<menuItem></menuItem>
 							</el-col>
 						</el-row>
+						<div id="foot_btn">
+							<el-pagination background layout="prev, pager, next" :total="500" :page-size='12'></el-pagination>
+						</div>
 					</el-col>
 				</el-row>
 			</div>
@@ -839,6 +842,10 @@
 		height: 332px;
 		margin-bottom: 20px;
 	}
+	#foot_btn {
+		padding: 44px 0 ;
+		text-align: center;
+	}
 </style>
 
 <style type="text/css">
@@ -868,5 +875,14 @@
 		line-height: 30px;
 		padding: 0 10px;
 		vertical-align: middle;
+	}
+	#foot_btn .el-pagination .number.active {
+		background-color: #8B4513;
+	}
+	#foot_btn .el-pagination .number:hover {
+		color: lightcoral;
+	}
+	#foot_btn .el-pagination .number.active:hover {
+		color: white;
 	}
 </style>

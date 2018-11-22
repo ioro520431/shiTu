@@ -10,6 +10,8 @@ import DietHealth from '@/components/DietHealth.vue'
 import CookBook from '@/components/CookBook.vue'
 import RecipeVideo from '@/components/RecipeVideo.vue'
 import VedioPlayer from '@/components/VedioPlayer.vue'
+import Personal from '@/components/Personal.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -68,6 +70,11 @@ export default new Router({
       path: '/vedio_layer',
       name: 'VedioPlayer',
       component: VedioPlayer,
+    },
+    {
+      path: '/personal',
+      name: 'Personal',
+      component: Personal,
     }
   ],
   mode: 'history'

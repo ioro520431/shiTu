@@ -33,9 +33,8 @@
 					</li>
 				</ul>
 			</div>
-			<div class="block">
-				<el-pagination background layout="prev, pager, next" :total="1000">
-				</el-pagination>
+			<div id="foot_btn">
+				<el-pagination background layout="prev, pager, next" :total="500" :page-size='12'></el-pagination>
 			</div>
 		</el-col>
 	</div>
@@ -482,5 +481,20 @@
 		/*margin-top: 20px;*/
 		margin: 40px auto;
 		margin-left: 20px;
+	}
+	#foot_btn {
+		padding: 44px 0 ;
+		text-align: center;
+	}
+</style>
+<style type="text/css">
+	#foot_btn .el-pagination .number.active {
+		background-color: #8B4513;
+	}
+	#foot_btn .el-pagination .number:hover {
+		color: lightcoral;
+	}
+	#foot_btn .el-pagination .number.active:hover {
+		color: white;
 	}
 </style>
