@@ -1,6 +1,6 @@
 <template>
 	<div class="item_box">
-		<router-link to='/cook_book' class='underline_none'>
+		<router-link to='/common' class='underline_none'>
 			<span class="tip">抵抗力<em></em></span>
 			<div class="box">
 				<div class="curtain">

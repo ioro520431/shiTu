@@ -66,11 +66,6 @@
 </template>
 
 <script>
-	import menuItem from './MenuItem.vue'
-	import broadCast from './Broadcast.vue';
-	import foodMaterial from './FoodMaterial.vue';
-	import hot from './Hot.vue';
-	import healthy from './Healthy.vue';
 	export default {
 		name: 'Common',
 		components: {
@@ -85,7 +80,7 @@
 			}
 		},
 		mounted: function() {
-			this.$store.commit('changeTopFlag', 1)
+			this.$store.commit('changeTopFlag', 3)
 		}
 	}
 	
