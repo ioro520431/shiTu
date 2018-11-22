@@ -1,17 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import registered from'@/components/registered'
-import Menu from'@/components/Menu'
+import Menu from'@/components/Menu.vue'
 import Home from '@/components/Home.vue'
 import Login from '@/components/Login.vue'
 import Material from '@/components/Material.vue'
 import Common from '@/components/Common.vue'
 import DietHealth from '@/components/DietHealth.vue'
 import CookBook from '@/components/CookBook.vue'
+import Detail from '@/components/Detail.vue'
+import MenuDescribe from '@/components/MenuDescribe.vue'
 import RecipeVideo from '@/components/RecipeVideo.vue'
 import VedioPlayer from '@/components/VedioPlayer.vue'
 import Personal from '@/components/Personal.vue'
-
 Vue.use(Router)
 
 export default new Router({
@@ -75,6 +76,16 @@ export default new Router({
       path: '/personal',
       name: 'Personal',
       component: Personal,
+    },
+    {
+      path: '/Detail',
+      name: 'Detail',
+      component: Detail,
+    },
+    {
+    	path: '/MenuDescribe',
+      name: 'MenuDescribe',
+      component: MenuDescribe,
     }
   ],
   mode: 'history'
