@@ -1,21 +1,23 @@
 <template>
 	<div class="item_box">
-		<router-link to='/cook_book' class='underline_none'>
-			<span class="tip">抵抗力<em></em></span>
+		<router-link :to="'/cook_book?menuId='+menuInfo.m_id" class='underline_none'>
+			<span class="tip" v-if="menuInfo.tip">{{menuInfo.tip[0]}}<em></em></span>
 			<div class="box">
-				<img src="../../static/img/test001.jpg" />
+				<div class="img">
+					<img :src="menuInfo.m_img" />
+				</div>
 				<div class="text">
 					<div class="top">
-						<p class="name">香酥反沙馒头条</p>
+						<p class="name">{{menuInfo.m_name}}</p>
 						<p class="state">
-							<span>0评论</span>
-							<span>0人气</span>
+							<span>{{menuInfo.comment}}评论</span>
+							<span>{{menuInfo.browse}}人气</span>
 						</p>
 						<p class="user">老方小雨</p>
 					</div>
 					<div class="bottom">
-						<p class="time">9步/大概十分钟</p>
-						<p class="way">炸/甜味</p>
+						<p class="time">{{menuInfo.step.length}}步/{{menuInfo.make_time}}</p>
+						<p class="way">{{menuInfo.craft}}/{{menuInfo.flavor}}</p>
 					</div>
 				</div>
 			</div>
@@ -25,7 +27,10 @@
 
 <script>
 	export default {
-		name: 'MenuItem'
+		name: 'MenuItem',
+		props:{
+			menuInfo:Object
+		}
 	}
 </script>
 
@@ -69,10 +74,14 @@
 		right: 0;
 		bottom: -6px;
 	}
-	
-	.item_box img {
+	.item_box .img {
+		overflow: hidden;
 		position: relative;
 		z-index: 2;
+		width: 238px;
+		height: 238px;
+	}
+	.item_box img {
 		width: 238px;
 	}
 	

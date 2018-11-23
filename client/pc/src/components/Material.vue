@@ -40,16 +40,7 @@
 							<router-link to='/material?id=013' :class='{active_kind:showSmallTitle==13}'>素食</router-link>
 						</dd>
 						<dd>
-							<router-link to='/material?id=014' :class='{active_kind:showSmallTitle==14}'>早餐</router-link>
-						</dd>
-						<dd>
-							<router-link to='/material?id=015' :class='{active_kind:showSmallTitle==15}'>午餐</router-link>
-						</dd>
-						<dd>
-							<router-link to='/material?id=016' :class='{active_kind:showSmallTitle==16}'>晚餐</router-link>
-						</dd>
-						<dd>
-							<router-link to='/material?id=017' :class='{active_kind:showSmallTitle==17}'>私家菜</router-link>
+							<router-link to='/material?id=014' :class='{active_kind:showSmallTitle==14}'>私家菜</router-link>
 						</dd>
 					</dl>
 					<dl class="more">
@@ -420,45 +411,12 @@
 					</el-col>
 					<el-col :span='18'>
 						<el-row :gutter='20'>
-							<el-col :span='8' class='menu_view'>
-								<menuItem></menuItem>
-							</el-col>
-							<el-col :span='8' class='menu_view'>
-								<menuItem></menuItem>
-							</el-col>
-							<el-col :span='8' class='menu_view'>
-								<menuItem></menuItem>
-							</el-col>
-							<el-col :span='8' class='menu_view'>
-								<menuItem></menuItem>
-							</el-col>
-							<el-col :span='8' class='menu_view'>
-								<menuItem></menuItem>
-							</el-col>
-							<el-col :span='8' class='menu_view'>
-								<menuItem></menuItem>
-							</el-col>
-							<el-col :span='8' class='menu_view'>
-								<menuItem></menuItem>
-							</el-col>
-							<el-col :span='8' class='menu_view'>
-								<menuItem></menuItem>
-							</el-col>
-							<el-col :span='8' class='menu_view'>
-								<menuItem></menuItem>
-							</el-col>
-							<el-col :span='8' class='menu_view'>
-								<menuItem></menuItem>
-							</el-col>
-							<el-col :span='8' class='menu_view'>
-								<menuItem></menuItem>
-							</el-col>
-							<el-col :span='8' class='menu_view'>
-								<menuItem></menuItem>
+							<el-col :span='8' class='menu_view' v-for='(item,index) in info' :key='index'>
+								<menuItem v-bind:menuInfo='item'></menuItem>
 							</el-col>
 						</el-row>
 						<div id="foot_btn">
-							<el-pagination background layout="prev, pager, next" :total="500" :page-size='12'></el-pagination>
+							<el-pagination background layout="prev, pager, next" :total="info.length" :page-size='12'></el-pagination>
 						</div>
 					</el-col>
 				</el-row>
@@ -473,20 +431,30 @@
 		name: 'Material',
 		mounted: function() {
 			this.$store.commit('changeTopFlag', 2);
-			this.showBigTile = parseInt(this.$route.query.id/100);
-			this.showSmallTitle = this.$route.query.id%100;
+			this.showBigTile = parseInt(this.$route.query.id / 100);
+			this.showSmallTitle = this.$route.query.id % 100;
+			let _this = this;
+			_this.$http.get('/material', {
+				params: {
+					menu_kind: _this.$route.query.id
+				}
+			}).then(response => {
+				console.log(response.data);
+				_this.info = response.data;
+			})
+
 		},
 		data() {
 			return {
 				showBigTile: 0,
 				showSmallTitle: 11,
 				activeNames: ['1'],
-				showMenu: true
+				showMenu: true,
+				info:''
 			};
 		},
 		methods: {
-			handleChange(val) {
-			},
+			handleChange(val) {},
 			changeMenu(flag) {
 				this.showMenu = flag;
 			}
@@ -496,8 +464,17 @@
 		},
 		watch: {
 			queryValue(val, oldVal) {
-				this.showBigTile = parseInt(val/100);
-				this.showSmallTitle = val%100;
+				let _this = this;
+				_this.showBigTile = parseInt(val / 100);
+				_this.showSmallTitle = val % 100;
+				_this.$http.get('/material', {
+					params: {
+						menu_kind: val
+					}
+				}).then(response => {
+					console.log(response.data);
+					_this.info = response.data;
+				})
 			},
 		},
 		computed: {
@@ -513,6 +490,7 @@
 		width: 100%;
 		min-width: 1349px;
 	}
+	
 	.content {
 		min-height: 600px;
 		margin-top: 20px;
@@ -842,8 +820,9 @@
 		height: 332px;
 		margin-bottom: 20px;
 	}
+	
 	#foot_btn {
-		padding: 44px 0 ;
+		padding: 44px 0;
 		text-align: center;
 	}
 </style>
@@ -876,12 +855,15 @@
 		padding: 0 10px;
 		vertical-align: middle;
 	}
+	
 	#foot_btn .el-pagination .number.active {
 		background-color: #8B4513;
 	}
+	
 	#foot_btn .el-pagination .number:hover {
 		color: lightcoral;
 	}
+	
 	#foot_btn .el-pagination .number.active:hover {
 		color: white;
 	}

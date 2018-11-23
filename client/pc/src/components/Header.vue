@@ -48,10 +48,10 @@
 										<dd><router-link to='/material?id=011'>家常菜</router-link></dd>
 										<dd><router-link to='/material?id=012'>凉菜</router-link></dd>
 										<dd><router-link to='/material?id=013'>素食</router-link></dd>
-										<dd><router-link to='/material?id=014'>早餐</router-link></dd>
-										<dd><router-link to='/material?id=015'>午餐</router-link></dd>
-										<dd><router-link to='/material?id=016'>晚餐</router-link></dd>
-										<dd><router-link to='/material?id=017'>私家菜</router-link></dd>
+										<dd><router-link to='/material?id=021'>早餐</router-link></dd>
+										<dd><router-link to='/material?id=022'>午餐</router-link></dd>
+										<dd><router-link to='/material?id=023'>晚餐</router-link></dd>
+										<dd><router-link to='/material?id=014'>私家菜</router-link></dd>
 									</dl>
 								</div>
 								<br />
@@ -167,12 +167,8 @@
 						<li>
 							<router-link to='/menu'><strong :class="{active:topFlag==4}">美食菜单</strong></router-link>
 						</li>
-						<li class="img">
-							<router-link to='#'><strong :class="{active:topFlag==5}">美食达人</strong></router-link>
-							<img src="../assets/guan.png"/>
-						</li>
 						<li>
-							<router-link to='/recipe_video'><strong :class="{active:topFlag==6}">菜谱视频</strong></router-link>
+							<router-link to='/recipe_video'><strong :class="{active:topFlag==5}">菜谱视频</strong></router-link>
 						</li>
 						<li>
 							<router-link to='#'><strong :class="{active:topFlag==7}">微信小程序</strong></router-link>

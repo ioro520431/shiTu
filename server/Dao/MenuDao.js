@@ -1,4 +1,3 @@
-
 module.exports = function () {
     this.init = function () {
         //1,引入MySQL模块
@@ -16,8 +15,8 @@ module.exports = function () {
         this.connection.connect();
     };
 
-    this.selectUser = function (info, call) {
-        var userGetSql = "SELECT * FROM users WHERE " + info[0] + " = '" + info[1] + "'";
+    this.selectMenu = function (menuId, call) {
+        var userGetSql = "SELECT * FROM menu WHERE m_id=" + menuId;
         this.connection.query(userGetSql, function (err, result) {
             if (err) {
                 console.log('[INSERT ERROR] - ', err.message);
@@ -26,7 +25,16 @@ module.exports = function () {
             call(result);
         });
     };
-
+    this.selectMenuByKey = (info, call)=>{
+        var userGetSql = "SELECT * FROM menu where "+info[0]+" like '%"+info[1]+"%';";
+        this.connection.query(userGetSql, function (err, result) {
+            if (err) {
+                console.log('[INSERT ERROR] - ', err.message);
+                return;
+            }
+            call(result);
+        });
+    };
     this.insertUser = function (info, call) {
         var userAddSql = "INSERT INTO users(u_name,u_pwd,name,sex,home,address,birthday) values(?,?,?,?,?,?,?)";
         var userAddSql_params = [];

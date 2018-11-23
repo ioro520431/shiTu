@@ -5,48 +5,51 @@
 				<h2>世间唯美食不可辜负矣</h2>
 				<el-row>
 					<el-col :span='8' class='left_img'>
-						<img src="../../static/img/test00001.jpg" alt="" />
+						<img :src="info.m_img" alt="" />
 					</el-col>
 					<el-col :span='16' class='right_box'>
 						<div class="info1">
-							<h1>南瓜肉松小餐包</h1>
+							<h1>{{info.m_name}}</h1>
 							<el-button>收藏</el-button>
+							<div class="tips">
+								<span v-for="item in info.tip" :key='item'>{{item}}</span>
+							</div>
 						</div>
 						<div class="info2">
 							<el-row>
 								<el-col :span='4' class='short'>
 									<i>工艺</i>
-									<span class="info_title">烘焙</span>
+									<span class="info_title">{{info.craft}}</span>
 								</el-col>
 								<el-col :span='10' class='long'>
 									<i>难度</i>
 									<span class="info_icon diff"></span>
 									<span class="info_time diff_time"></span>
-									<span class='info_text'>初中水平</span>
+									<span class='info_text'>{{info.difficulty}}</span>
 								</el-col>
 								<el-col :span='10' class='long'>
 									<i>人数</i>
 									<span class="info_icon pepo"></span>
 									<span class="info_time pepo_time"></span>
-									<span class='info_text'>初中水平</span>
+									<span class='info_text'>{{info.p_num}}人</span>
 								</el-col>
 							</el-row>
 							<el-row>
 								<el-col :span='4' class='short'>
 									<i>口味</i>
-									<span class="info_title">咸鲜味</span>
+									<span class="info_title">{{info.flavor}}</span>
 								</el-col>
 								<el-col :span='10' class='long'>
 									<i>准备时间</i>
 									<span class="info_icon ready"></span>
 									<span class="info_time ready_time"></span>
-									<span class='info_text'>30分钟</span>
+									<span class='info_text'>{{info.ready_time}}</span>
 								</el-col>
 								<el-col :span='10' class='long'>
 									<i>烹饪时间</i>
 									<span class="info_icon cook"></span>
 									<span class="info_time cook_time"></span>
-									<span class='info_text'>小于数小时</span>
+									<span class='info_text'>{{info.make_time}}</span>
 								</el-col>
 							</el-row>
 						</div>
@@ -63,136 +66,64 @@
 			<el-col :span='18'>
 				<div class='cook_stuff'>
 					<p class="top_text">
-						<strong>“</strong> 这是根据阿呜511老师的南瓜老面包配方调整做的南瓜肉松小餐包，本身南瓜中种面包的松软微甜，加上肉松芝士的微咸，好吃极了。
+						<strong>“</strong>{{info.m_desc}}
 						<strong>”</strong>
 					</p>
 					<h2>用料</h2>
 					<div class="stuff_box">
-					<div class="main_stuff">
-						<p>主料</p>
-						<ul>
-							<li>
-								<router-link to='#' class='stuff_img'>
-									<img src="../assets/test011.jpg" alt="" />
-								</router-link>
-								<p class="stuff_text">
-									<router-link to='#'>高筋面粉</router-link>
-									<span>300克</span>
-								</p>
-							</li>
-							<li>
-								<router-link to='#' class='stuff_img'>
-									<img src="../assets/test011.jpg" alt="" />
-								</router-link>
-								<p class="stuff_text">
-									<router-link to='#'>高筋面粉</router-link>
-									<span>300克</span>
-								</p>
-							</li>
-							<li>
-								<router-link to='#' class='stuff_img'>
-									<img src="../assets/test011.jpg" alt="" />
-								</router-link>
-								<p class="stuff_text">
-									<router-link to='#'>高筋面粉</router-link>
-									<span>300克</span>
-								</p>
-							</li>
-							<li>
-								<router-link to='#' class='stuff_img'>
-									<img src="../assets/test011.jpg" alt="" />
-								</router-link>
-								<p class="stuff_text">
-									<router-link to='#'>高筋面粉</router-link>
-									<span>300克</span>
-								</p>
-							</li>
-						</ul>
+						<div class="main_stuff">
+							<p>主料</p>
+							<ul>
+								<li v-for="(item,index) in info.main_ma" :key='index'>
+									<router-link to='#' class='stuff_img'>
+										<img src="../assets/test011.jpg" alt="" />
+									</router-link>
+									<p class="stuff_text">
+										<router-link to='#'>{{item.name}}</router-link>
+										<span>{{item.num}}</span>
+									</p>
+								</li>
+							</ul>
+						</div>
+						<div class="more_stuff">
+							<p>辅料</p>
+							<ul>
+								<li v-for="(item,index) in info.assist_ma" :key='index'>
+									<router-link to='#'>{{item.name}}</router-link>
+									<span>{{item.num}}</span>
+								</li>
+							</ul>
+						</div>
 					</div>
-					<div class="more_stuff">
-						<p>辅料</p>
-						<ul>
-							<li>
-								<router-link to='#'>肉松</router-link>
-								<span>一小碗</span>
-							</li>
-							<li>
-								<router-link to='#'>肉松</router-link>
-								<span>一小碗</span>
-							</li>
-							<li>
-								<router-link to='#'>肉松</router-link>
-								<span>一小碗</span>
-							</li>
-							<li>
-								<router-link to='#'>肉松</router-link>
-								<span>一小碗</span>
-							</li>
-							<li>
-								<router-link to='#'>肉松</router-link>
-								<span>一小碗</span>
-							</li>
-						</ul>
-					</div>
-				</div>
 				</div>
 				<div class='measure'>
-					<h3>南瓜肉松小餐包的做法</h3>
+					<h3>{{info.m_name}}的做法</h3>
 					<div>
-						<div class="measure_item">
-							<p class="serial">1.</p>
+						<div class="measure_item" v-for="(item,index) in info.step" :key='index'>
+							<p class="serial">{{index+1}}.</p>
 							<div class='measure_content'>
-								<p class="measure_text">
-中种材料全部投入面包机揉成一个面团，室温发酵半小时左右，有些微发酵了，然后再放冰箱冷藏发酵。（因为现在冬天室温低，和好直接放冰箱，发酵非常慢。夏天面团和好时面温就有点高了，可直接放冰箱或是室温几分钟再放。）</p>
+								<p class="measure_text">{{item.stepNum}}</p>
 								<p class="measure_img">
-									<img src="../../static/img/test002.jpg" alt="" />
-								</p>
-							</div>
-						</div>
-						<div class="measure_item">
-							<p class="serial">2.</p>
-							<div class='measure_content'>
-								<p class="measure_text">
-中种材料全部投入面包机揉成一个面团，室温发酵半小时左右，有些微发酵了，然后再放冰箱冷藏发酵。（因为现在冬天室温低，和好直接放冰箱，发酵非常慢。夏天面团和好时面温就有点高了，可直接放冰箱或是室温几分钟再放。）</p>
-								<p class="measure_img">
-									<img src="../../static/img/test002.jpg" alt="" />
-								</p>
-							</div>
-						</div>
-						<div class="measure_item">
-							<p class="serial">3.</p>
-							<div class='measure_content'>
-								<p class="measure_text">
-中种材料全部投入面包机揉成一个面团，室温发酵半小时左右，有些微发酵了，然后再放冰箱冷藏发酵。（因为现在冬天室温低，和好直接放冰箱，发酵非常慢。夏天面团和好时面温就有点高了，可直接放冰箱或是室温几分钟再放。）</p>
-								<p class="measure_img">
-									<img src="../../static/img/test002.jpg" alt="" />
+									<img :src="item.stepImg" alt="" />
 								</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="finished">
-					<h3>南瓜肉松小餐包成品图</h3>
+					<h3>{{info.m_name}}成品图</h3>
 					<div>
-						 <el-carousel arrow="never" trigger="click">
-						    <el-carousel-item>
-						      	<img src="../../static/img/tet02.jpg"/>
-						    </el-carousel-item>
-						    <el-carousel-item>
-						      	<img src="../../static/img/tet03.jpg"/>
-						    </el-carousel-item>
-						    <el-carousel-item>
-						      	<img src="../../static/img/tet01.jpg"/>
-						    </el-carousel-item>
+						<el-carousel arrow="never" trigger="click">
+							<el-carousel-item v-for='item in info.finished' :key='item'>
+								<img :src="item" />
+							</el-carousel-item>
 						</el-carousel>
 					</div>
 				</div>
-				<div class="skill">
+				<div class="skill" v-if="info.skill">
 					<h3>烹饪技巧</h3>
 					<div>
-						<p>1、面粉的牌子不一样，吸水性也不一样，液体不要一次全倒入，留10-20克左右看情况再决定是否添加。</p>
-						<p>2、每个人的烤箱实际温度也不一样，请根据自己的烤箱调节温度和时间。</p>
-						<p>3、南瓜面包本身的颜色金黄的就很漂亮。如果想光亮一些，可在出炉后刷一层融化的黄油或蜂蜜水。</p>
+						<p v-for="(item,index) in info.skill" :key='index'>{{index+1}}、{{item}}</p>
 					</div>
 				</div>
 			</el-col>
@@ -204,6 +135,19 @@
 		name: 'CookBook',
 		mounted: function() {
 			this.$store.commit('changeTopFlag', 2);
+			let _this = this;
+			_this.$http.get('/cook_book', {
+				params: {
+					menuNum: _this.$route.query.menuId
+				}
+			}).then(response => {
+				_this.info = response.data;
+			})
+		},
+		data(){
+			return {
+				info:''
+			}
 		}
 	}
 </script>
@@ -248,6 +192,18 @@
 		display: inline-block;
 	}
 	
+	.info1>.tips>span {
+		display: inline-block;
+		height: 32px;
+		line-height: 32px;
+		font-size: 14px;
+		color: white;
+		padding: 0 8px;
+		background-color: #60a531;
+		border: 1px solid #46811d;
+		margin-right: 5px;
+	}
+	
 	.info2 {
 		width: 674px;
 		height: 172px;
@@ -273,7 +229,7 @@
 	
 	.info_title {
 		display: block;
-		font-size: 24px;
+		font-size: 22px;
 		color: #8B4513;
 	}
 	
@@ -383,7 +339,7 @@
 	}
 	
 	.top_text {
-		height: 54px;
+		min-height: 54px;
 		padding: 20px 24px 10px;
 		font-size: 14px;
 		line-height: 24px;
@@ -421,9 +377,12 @@
 		border: 1px solid darkslategray;
 		vertical-align: top;
 	}
-	ul,li {
+	
+	ul,
+	li {
 		list-style: none;
 	}
+	
 	.main_stuff>ul,
 	.more_stuff>ul {
 		width: 674px;
@@ -431,6 +390,7 @@
 		font-size: 0;
 		vertical-align: top;
 	}
+	
 	.main_stuff li {
 		display: inline-block;
 		width: 336px;
@@ -438,9 +398,11 @@
 		vertical-align: top;
 		border-bottom: 1px solid #DCDCDC;
 	}
+	
 	.main_stuff li:nth-of-type(2n-1) {
 		border-right: 1px solid #DCDCDC;
 	}
+	
 	.stuff_img {
 		display: inline-block;
 		width: 50px;
@@ -448,11 +410,13 @@
 		padding: 14px 0 14px 14px;
 		vertical-align: top;
 	}
+	
 	.stuff_img>img {
 		display: inline-block;
 		width: 50px;
 		height: 50px;
 	}
+	
 	.stuff_text {
 		display: inline-block;
 		width: 252px;
@@ -460,17 +424,20 @@
 		padding: 14px 10px 14px 10px;
 		line-height: 51px;
 	}
+	
 	.stuff_text>a {
 		font-size: 14px;
 		text-decoration: none;
 		color: #8B4513;
 	}
+	
 	.stuff_text>span {
 		font-size: 12px;
 		float: right;
 		color: #A9A9A9;
 	}
-	.more_stuff li{
+	
+	.more_stuff li {
 		display: inline-block;
 		width: 312px;
 		height: 27px;
@@ -479,23 +446,28 @@
 		padding: 14px 10px 14px 14px;
 		line-height: 27px;
 	}
+	
 	.more_stuff li:nth-of-type(2n-1) {
 		border-right: 1px solid #DCDCDC;
 	}
+	
 	.more_stuff a {
 		font-size: 14px;
 		text-decoration: none;
 		color: #8B4513;
 	}
+	
 	.more_stuff span {
 		font-size: 12px;
 		float: right;
 		color: #A9A9A9;
 	}
+	
 	.measure {
 		margin-top: 20px;
 		background-color: white;
 	}
+	
 	.measure>h3,
 	.finished>h3,
 	.skill>h3 {
@@ -508,14 +480,17 @@
 		border-bottom: 1px solid #DCDCDC;
 		color: #8B4513;
 	}
+	
 	.measure>div {
 		width: 100%;
 		margin-top: 20px;
 	}
+	
 	.measure_item {
 		width: 100%;
 		font-size: 0;
 	}
+	
 	.serial {
 		display: inline-block;
 		width: 100px;
@@ -526,11 +501,13 @@
 		color: #8B4513;
 		text-align: center;
 	}
+	
 	.measure_content {
 		display: inline-block;
 		width: 638px;
 		padding-right: 20px;
 	}
+	
 	.measure_text {
 		width: 638px;
 		padding: 10px 20px 10px 0;
@@ -538,34 +515,41 @@
 		line-height: 26px;
 		color: #808080;
 	}
+	
 	.measure_img>img {
-		width: 638px;
+		width: 538px;
 	}
+	
 	.finished {
 		background-color: white;
 		padding-bottom: 20px;
 	}
+	
 	.finished>div {
 		width: 638px;
 		margin-left: 100px;
 		padding-right: 20px;
 		margin-top: 20px;
 	}
+	
 	.el-carousel__item>img {
 		width: 635px;
 		height: 508px;
 		margin-top: -37px;
 	}
+	
 	.skill {
 		background-color: white;
 	}
+	
 	.skill>div {
 		padding: 10px 10px 10px 100px;
 		line-height: 24px;
 		font-size: 14px;
 	}
+	
 	.skill p {
-		color: 	#808080;
+		color: #808080;
 		padding: 5px 0;
 	}
 </style>
@@ -580,7 +564,8 @@
 		font-size: 16px;
 		letter-spacing: 2px;
 	}
+	
 	.finished .el-carousel__container {
-		height: 434px;
+		min-height: 434px;
 	}
 </style>

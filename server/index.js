@@ -36,6 +36,14 @@ app.get('/user_quit',indexController.userQuit);
 
 app.post('/register',indexController.register);
 
+
+var menuController = require('./Controllers/MenuController');
+
+app.get('/cook_book',menuController.cookBook);
+
+app.get('/material',menuController.material);
+
+
 app.listen(9999, function () {
     console.log('Server is running...');
 });

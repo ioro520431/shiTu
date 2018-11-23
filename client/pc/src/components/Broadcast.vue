@@ -23,19 +23,19 @@
 			<span class="time21">21:00</span>
 			<span class="time4_">4:00</span>
 			<div class="item">
-				<div @click="change(0)" :class="{active:flag==0}">
+				<div @mousemove="change(0)" :class="{active:flag==0}">
 					<span>早餐时间</span>
 				</div>
-				<div @click="change(1)" :class="{active:flag==1}">
+				<div @mousemove="change(1)" :class="{active:flag==1}">
 					<span>午餐时间</span>
 				</div>
-				<div @click="change(2)" :class="{active:flag==2}">
+				<div @mousemove="change(2)" :class="{active:flag==2}">
 					<span>下午茶时间</span>
 				</div>
-				<div @click="change(3)" :class="{active:flag==3}">
+				<div @mousemove="change(3)" :class="{active:flag==3}">
 					<span>晚餐时间</span>
 				</div>
-				<div @click="change(4)" :class="{active:flag==4}">
+				<div @mousemove="change(4)" :class="{active:flag==4}">
 					<span>夜宵时间</span>
 				</div>
 			</div>

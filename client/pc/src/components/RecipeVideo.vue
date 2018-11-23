@@ -34,7 +34,7 @@
 	export default {
 		name:'RecipeVideo',
 		mounted: function() {
-			this.$store.commit('changeTopFlag', 6)
+			this.$store.commit('changeTopFlag', 5)
 		},
 		components:{
 			vedioItem
