@@ -51,98 +51,98 @@
 			return {
 				list: [
 					[{
-							srcs: '../../static/img/test1.jpg',
-							title: '回锅肉',
-							text: '川菜明珠回锅肉!',
+							srcs: '../../static/img/broadcast_z1.jpg',
+							title: '紫米面煎饼馃子',
+							text: '快手早餐，上班族首选',
+							tip: '营养美味'
+						},
+						{
+							srcs: '../../static/img/broadcast_z2.jpg',
+							title: '茴香水饺',
+							text: '皮薄馅厚，鲜香美味',
 							tip: '营养丰富'
 						},
 						{
-							srcs: '../../static/img/test1.jpg',
-							title: '回锅肉',
-							text: '川菜明珠回锅肉!',
-							tip: '营养丰富'
-						},
-						{
-							srcs: '../../static/img/test1.jpg',
-							title: '回锅肉',
-							text: '川菜明珠回锅肉!',
-							tip: '营养丰富'
+							srcs: '../../static/img/broadcast_z3.jpg',
+							title: '西红柿炒鸡蛋青菜汤面',
+							text: '一人份早餐，简单好吃',
+							tip: '延年益寿'
 						}
 					],
 					[{
-							srcs: '../../static/img/test2.jpg',
-							title: '回锅肉',
-							text: '川菜明珠回锅肉!',
-							tip: '营养丰富'
+							srcs: '../../static/img/broadcast_w1.jpg',
+							title: '鲜辣土豆虾',
+							text: '香辣爽口，营养下饭',
+							tip: '补充钙质'
 						},
 						{
-							srcs: '../../static/img/test2.jpg',
-							title: '回锅肉',
-							text: '川菜明珠回锅肉!',
-							tip: '营养丰富'
+							srcs: '../../static/img/broadcast_w2.jpg',
+							title: '红烧白鱼段',
+							text: '鱼肉细嫩，补充蛋白',
+							tip: '补脑益智'
 						},
 						{
-							srcs: '../../static/img/test2.jpg',
-							title: '回锅肉',
-							text: '川菜明珠回锅肉!',
-							tip: '营养丰富'
+							srcs: '../../static/img/broadcast_w3.jpg',
+							title: '梅子卤鸡腿',
+							text: '午餐给自己加个鸡腿',
+							tip: '补充能量'
 						}
 					],
 					[{
-							srcs: '../../static/img/test3.jpg',
-							title: '回锅肉',
-							text: '川菜明珠回锅肉!',
-							tip: '营养丰富'
+							srcs: '../../static/img/broadcast_x1.jpg',
+							title: '桂花糯米糕',
+							text: '桂花清香，又软又糯',
+							tip: '补中益气'
 						},
 						{
-							srcs: '../../static/img/test3.jpg',
-							title: '回锅肉',
-							text: '川菜明珠回锅肉!',
-							tip: '营养丰富'
+							srcs: '../../static/img/broadcast_x2.jpg',
+							title: '无泡打粉版铜锣烧',
+							text: '做法简单，甜而不腻',
+							tip: '补中益气'
 						},
 						{
-							srcs: '../../static/img/test3.jpg',
-							title: '回锅肉',
-							text: '川菜明珠回锅肉!',
-							tip: '营养丰富'
+							srcs: '../../static/img/broadcast_x3.jpg',
+							title: '珍珠奶茶',
+							text: '自制奶茶，甜蜜一下',
+							tip: '补充能量'
 						}
 					],
 					[{
-							srcs: '../../static/img/test4.jpg',
-							title: '回锅肉',
-							text: '川菜明珠回锅肉!',
-							tip: '营养丰富'
+							srcs: '../../static/img/broadcast_wan1.jpg',
+							title: '爆炒羊心',
+							text: '荤素搭配，补血养血',
+							tip: '补血安神'
 						},
 						{
-							srcs: '../../static/img/test4.jpg',
-							title: '回锅肉',
-							text: '川菜明珠回锅肉!',
-							tip: '营养丰富'
+							srcs: '../../static/img/broadcast_wan2.jpg',
+							title: '蒜香鳕鱼',
+							text: '肉质细嫩，蛋白丰富',
+							tip: '补脑益智'
 						},
 						{
-							srcs: '../../static/img/test4.jpg',
-							title: '回锅肉',
-							text: '川菜明珠回锅肉!',
-							tip: '营养丰富'
+							srcs: '../../static/img/broadcast_wan3.jpg',
+							title: '菌菇肉丸汤',
+							text: '鲜香滑嫩，晚上吃极好',
+							tip: '延缓衰老'
 						}
 					],
 					[{
-							srcs: '../../static/img/test5.jpg',
-							title: '回锅肉',
-							text: '川菜明珠回锅肉!',
-							tip: '营养丰富'
+							srcs: '../../static/img/broadcast_ye1.jpg',
+							title: '剁椒炒乌冬面',
+							text: '爽辣开胃，一口就上瘾',
+							tip: '延缓衰老'
 						},
 						{
-							srcs: '../../static/img/test5.jpg',
-							title: '回锅肉',
-							text: '川菜明珠回锅肉!',
-							tip: '营养丰富'
+							srcs: '../../static/img/broadcast_ye2.jpg',
+							title: '好吃的酱油炒饭',
+							text: '食材搭配随意，好吃营养',
+							tip: '补充能量'
 						},
 						{
-							srcs: '../../static/img/test5.jpg',
-							title: '回锅肉',
-							text: '川菜明珠回锅肉!',
-							tip: '营养丰富'
+							srcs: '../../static/img/broadcast_ye3.jpg',
+							title: '小米南瓜羹',
+							text: '健脾和胃，美味又营养',
+							tip: '养胃首选'
 						}
 					]
 				],

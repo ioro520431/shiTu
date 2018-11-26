@@ -263,17 +263,9 @@
 					<el-col :span='6'>
 						<div>
 							<div class="chose_items">
-								<div class="chose_item">
-									<span>南瓜</span>
-									<i class="el-icon-close"></i>
-								</div>
-								<div class="chose_item">
-									<span>南瓜</span>
-									<i class="el-icon-close"></i>
-								</div>
-								<div class="chose_item">
-									<span>南瓜</span>
-									<i class="el-icon-close"></i>
+								<div class="chose_item" v-for="(item,key) in choseItem" :key='item' v-if="item">
+									<span>{{item}}</span>
+									<i class="el-icon-close" @click="setChoseItem(key)"></i>
 								</div>
 							</div>
 							<div class="chose_menus">
@@ -286,70 +278,24 @@
 								<div v-show="showMenu">
 									<el-collapse v-model="activeNames" @change="handleChange" accordion>
 										<el-collapse-item title="选择难度" name="1">
-											<router-link to="#" class="menu_item menu_active">
-												新手尝试
-											</router-link>
-											<router-link to="#" class="menu_item">
-												初中水平
-											</router-link>
-											<router-link to="#" class="menu_item">
-												中级掌勺
-											</router-link>
-											<router-link to="#" class="menu_item">
-												高级厨师
-											</router-link>
+											<a href="javascript:void(0)" class="menu_item" :class="{menu_active:dif_flag==index+1}" @click="setChoseItem('difficulty',index,item)" v-for="(item,index) in difficult" :key='index'>
+												{{item}}
+											</a>
 										</el-collapse-item>
 										<el-collapse-item title="选择工艺" name="2">
-											<router-link to="#" class="menu_item menu_active">
-												炒
-											</router-link>
-											<router-link to="#" class="menu_item">
-												蒸
-											</router-link>
-											<router-link to="#" class="menu_item">
-												煮
-											</router-link>
-											<router-link to="#" class="menu_item">
-												拌
-											</router-link>
-											<router-link to="#" class="menu_item">
-												煎
-											</router-link>
-											<router-link to="#" class="menu_item">
-												烘焙
-											</router-link>
+											<a href="javascript:void(0)" class="menu_item" :class="{menu_active:cra_flag==index+1}" @click="setChoseItem('craft',index,item)" v-for="(item,index) in craft" :key='index'>
+												{{item}}
+											</a>
 										</el-collapse-item>
 										<el-collapse-item title="选择口味" name="3">
-											<router-link to="#" class="menu_item menu_active">
-												家常味
-											</router-link>
-											<router-link to="#" class="menu_item">
-												香辣味
-											</router-link>
-											<router-link to="#" class="menu_item">
-												甜味
-											</router-link>
-											<router-link to="#" class="menu_item">
-												酸甜味
-											</router-link>
-											<router-link to="#" class="menu_item">
-												酸辣味
-											</router-link>
-											<router-link to="#" class="menu_item">
-												麻辣味
-											</router-link>
+											<a href="javascript:void(0)" class="menu_item" :class="{menu_active:fla_flag==index+1}" @click="setChoseItem('flavor',index,item)" v-for="(item,index) in flavor" :key='index'>
+												{{item}}
+											</a>
 										</el-collapse-item>
 										<el-collapse-item title="选择时间" name="4">
-											<router-link to="#" class="menu_item menu_active">
-												<5分钟</router-link>
-													<router-link to="#" class="menu_item">
-														<15分钟 </router-link>
-															<router-link to="#" class="menu_item">
-																<30分钟 </router-link>
-																	<router-link to="#" class="menu_item">
-																		<60分钟 </router-link>
-																			<router-link to="#" class="menu_item">
-																				<90分钟 </router-link>
+											<a href="javascript:void(0)" class="menu_item" :class="{menu_active:time_flag==index+1}" @click="setChoseItem('time',index,item)" v-for="(item,index) in make_time" :key='index'>
+												{{item}}
+											</a>
 										</el-collapse-item>
 									</el-collapse>
 								</div>
@@ -361,47 +307,12 @@
 									<p>按数量排序</p>
 									<div class="material_view">
 										<ul>
-											<li>
-												<router-link to="#" class="material_item material_item_active">
+											<li v-for="(item,index) in material" :key='index'>
+												<a href="javascript:void(0)" class="material_item" :class="{material_item_active:ma_flag==index+1}" @click="setChoseItem('material',index,item)">
 													<span>应季</span>
-													<strong>南瓜</strong>
+													<strong>{{item}}</strong>
 													<i>531</i>
-												</router-link>
-											</li>
-											<li>
-												<router-link to="#" class="material_item">
-													<span>应季</span>
-													<strong>牛肉</strong>
-													<i>506</i>
-												</router-link>
-											</li>
-											<li>
-												<router-link to="#" class="material_item">
-													<span>应季</span>
-													<strong>虾</strong>
-													<i>407</i>
-												</router-link>
-											</li>
-											<li>
-												<router-link to="#" class="material_item">
-													<span>应季</span>
-													<strong>西红柿</strong>
-													<i>395</i>
-												</router-link>
-											</li>
-											<li>
-												<router-link to="#" class="material_item">
-													<span>应季</span>
-													<strong>鸡腿</strong>
-													<i>297</i>
-												</router-link>
-											</li>
-											<li>
-												<router-link to="#" class="material_item">
-													<span>应季</span>
-													<strong>虾</strong>
-													<i>407</i>
-												</router-link>
+												</a>
 											</li>
 										</ul>
 									</div>
@@ -430,16 +341,15 @@
 	export default {
 		name: 'Material',
 		mounted: function() {
-			this.$store.commit('changeTopFlag', 2);
-			this.showBigTile = parseInt(this.$route.query.id / 100);
-			this.showSmallTitle = this.$route.query.id % 100;
 			let _this = this;
 			_this.$http.get('/material', {
 				params: {
 					menu_kind: _this.$route.query.id
 				}
 			}).then(response => {
-				console.log(response.data);
+				_this.$store.commit('changeTopFlag', 2);
+				_this.showBigTile = parseInt(this.$route.query.id / 100);
+				_this.showSmallTitle = this.$route.query.id % 100;
 				_this.info = response.data;
 			})
 
@@ -450,13 +360,69 @@
 				showSmallTitle: 11,
 				activeNames: ['1'],
 				showMenu: true,
-				info:''
+				info:'',
+				difficult:['初级入门','新手尝试','初中水平','中级掌勺'],
+				craft:['炒','蒸','煮','拌','煎','烘焙'],
+				flavor:['家常味','香辣味','甜味','咸鲜味','五香味','奶香味'],
+				make_time:['<15分钟','<30','<60','<90','<120'],
+				material:['南瓜','牛肉','虾','西红柿','鸡腿','胡萝卜'],
+				dif_flag:0,
+				cra_flag:0,
+				fla_flag:0,
+				time_flag:0,
+				ma_flag:0,
+				choseItem:{
+					difficulty:'',
+					craft:'',
+					flavor:'',
+					time:'',
+					material:''
+				}
 			};
 		},
 		methods: {
 			handleChange(val) {},
 			changeMenu(flag) {
 				this.showMenu = flag;
+			},
+			setChoseItem(key,index,item){
+				switch (key){
+					case 'difficulty':
+						this.dif_flag=index+1;
+						break;
+					case 'craft':
+						this.cra_flag=index+1;
+						break;
+					case 'flavor':
+						this.fla_flag=index+1;
+						break;
+					case 'time':
+						this.time_flag=index+1;
+						break;
+					case 'material':
+						this.ma_flag=index+1;
+						break;
+					default:
+						break;
+				};
+				this.choseItem[key] = item;
+			},
+			changeChoseItem(key){
+				this.choseItem[key] = '';
+				switch (key){
+					case 'difficult':this.dif_flag=0;
+						break;
+					case 'craft':this.cra_flag=0;
+						break;
+					case 'flavor':this.fla_flag=0;
+						break;
+					case 'time':this.time_flag=0;
+						break;
+					case 'material':this.ma_flag=0;
+						break;
+					default:
+						break;
+				}
 			}
 		},
 		components: {
@@ -472,14 +438,31 @@
 						menu_kind: val
 					}
 				}).then(response => {
-					console.log(response.data);
 					_this.info = response.data;
 				})
 			},
+			choseItem:{
+				handler(val, oldVal){
+					let _this = this;
+					_this.$http.get('/item_menu',{
+						params:{
+							menuKind: _this.$route.query.id,
+							difficulty: val.difficulty,
+							craft: val.craft,
+							flavor: val.flavor,
+							time: val.time,
+							material: val.material
+						}
+					}).then(response=>{
+						_this.info = response.data;
+					})
+	            },
+	            deep:true
+			}
 		},
 		computed: {
-			queryValue() {
-				return this.$route.query.id
+			queryValue(){
+				return this.$route.query.id;
 			}
 		}
 	}

@@ -43,6 +43,15 @@ app.get('/cook_book',menuController.cookBook);
 
 app.get('/material',menuController.material);
 
+app.get('/detail',menuController.detail);
+
+app.get('/recipe_vedio',menuController.vedios);
+
+app.get('/vedio_info',menuController.vedioInfo);
+
+app.get('/hot_menu',menuController.hotMenu);
+
+app.get('/item_menu',menuController.itemMenu);
 
 app.listen(9999, function () {
     console.log('Server is running...');

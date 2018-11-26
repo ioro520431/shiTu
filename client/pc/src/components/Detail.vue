@@ -10,45 +10,22 @@
 						<img src="../../static/img/work01.jpg" alt="橘子" />
 					</div>
 					<div class="cen_left">
-						<h1>橘子
-					<router-link to="#"></router-link>
-					</h1>
+						<h1>{{info.ma_name}}</h1>
 						<p class="p1"></p>
 						<p class="p2">
-							【别名】：橘柑、柑橘、桔柑子<br> 【食量建议】：每天1~3个
-							<br> 【适宜人群】：一般人群均可食用
+							【别名】：{{info.alias}}<br> 【食量建议】：{{info.appetite}}
+							<br> 【适宜人群】：{{info.suit}}
 							<br>
-							<span>【禁忌人群】</span>：风寒咳嗽、痰饮咳嗽者不宜食用。
+							<span>【禁忌人群】</span>：{{info.taboo}}
 						</p>
 					</div>
 					<div class="cen_right">
 						<ul>
-							<li class="green">
-								<router-link to="#">气虚质</router-link>
+							<li class="green" v-for="(item,index) in info.ma_tip_green" :key='index'>
+								<router-link to="#">{{item}}</router-link>
 							</li>
-							<li class="green">
-								<router-link to="#">气郁质</router-link>
-							</li>
-							<li class="green">
-								<router-link to="#">湿热质</router-link>
-							</li>
-							<li class="green">
-								<router-link to="#">特秉质</router-link>
-							</li>
-							<li class="green">
-								<router-link to="#">阴虚质</router-link>
-							</li>
-							<li class="green">
-								<router-link to="#">血瘀质</router-link>
-							</li>
-							<li class="green">
-								<router-link to="#">平和质</router-link>
-							</li>
-							<li class="red">
-								<router-link to="#">痰湿质</router-link>
-							</li>
-							<li class="red">
-								<router-link to="#">阳虚质</router-link>
+							<li class="red" v-for="(item,index) in info.ma_tip_red">
+								<router-link to="#">{{item}}</router-link>
 							</li>
 						</ul>
 					</div>
@@ -56,219 +33,55 @@
 
 				<div class="middle_box">
 					<h2 class="title1">
-    	 				<router-link to="#">橘子的做法大全</router-link>
+    	 				<router-link to="#">{{info.ma_name}}的做法大全</router-link>
 					</h2>
 
 					<el-row :gutter='20'>
 						<el-col :span='18'>
 							<el-row :gutter='20'>
-								<el-col :span='8' class='menu_view'>
-									<menuItem></menuItem>
-								</el-col>
-								<el-col :span='8' class='menu_view'>
-									<menuItem></menuItem>
-								</el-col>
-								<el-col :span='8' class='menu_view'>
-									<menuItem></menuItem>
-								</el-col>
-								<el-col :span='8' class='menu_view'>
-									<menuItem></menuItem>
-								</el-col>
-								<el-col :span='8' class='menu_view'>
-									<menuItem></menuItem>
-								</el-col>
-								<el-col :span='8' class='menu_view'>
-									<menuItem></menuItem>
-								</el-col>
-								<el-col :span='8' class='menu_view'>
-									<menuItem></menuItem>
-								</el-col>
-								<el-col :span='8' class='menu_view'>
-									<menuItem></menuItem>
-								</el-col>
-								<el-col :span='8' class='menu_view'>
-									<menuItem></menuItem>
-								</el-col>
-								<el-col :span='8' class='menu_view'>
-									<menuItem></menuItem>
-								</el-col>
-								<el-col :span='8' class='menu_view'>
-									<menuItem></menuItem>
-								</el-col>
-								<el-col :span='8' class='menu_view'>
-									<menuItem></menuItem>
-								</el-col>
+								<!--<el-col :span='8' class='menu_view' v-for='(item,index) in info' :key='index'>
+									<menuItem v-bind:menuInfo='item'></menuItem>
+								</el-col>-->
 							</el-row>
 						</el-col>
 
-						<el-col :span='6'>
+						<el-col :span='6' class='right_view'>
 
 							<div class="chose_items">
-								<strong class="title1">橘子的百科知识</strong>
-								<strong class="title2">橘子介绍</strong>
-								<p>橘子是芸香科柑桔属的一种水果，亦可俗称为“桔子”。“橘”（jú）和“桔”（jié）都是现代汉语规范字。 当“桔”读jú时，是“橘”的俗字。橘子色彩鲜艳、酸甜可口，是秋冬季常见的美味佳果。 橘子味甘酸、性凉，入肺、胃经；具有开胃理气，止渴润肺的功效； 主治胸隔结气、呕逆少食、胃阴不足、口中干渴、肺热咳嗽及饮酒过度。
-								</p>
-								<strong class="title2">橘子的营养价值</strong>
-								<p>橘子中含有丰富的糖分、蛋白质、氨基酸、柠檬酸、枸橼酸、果胶、胡萝卜素、纤维素以及矿物质。</p>
+								<strong class="title1">{{info.ma_name}}的百科知识</strong>
+								<strong class="title2">{{info.ma_name}}介绍</strong>
+								<p>{{info.introduce}}</p>
+								<strong class="title2">{{info.ma_name}}的营养价值</strong>
+								<p>{{info.ma_value}}</p>
 
-								<strong class="title2">橘子的食用效果</strong>
-								<p>1.美容<br /> 2.消除疲劳 <br /> 橘子汉语丰富的柠檬酸，具有消除疲劳的作用。<br /> 3.预防便秘
+								<strong class="title2">{{info.ma_name}}的食用效果</strong>
+								<div v-for="(item,index) in info.ma_eat">
+									<p>{{index+1}}.{{item.title}}</p>
+									<p>{{item.text}}</p>
+								</div>
+								<strong class="title2">{{info.ma_name}}的食用禁忌</strong>
+								<p v-for="(item,index) in info.eat_taboo">{{index+1}}.{{item}}</p>
 
-									<br />橘子内侧薄皮含有膳食纤维及果胶，可以促进通便，并且可以降低胆固醇 。<br /> 4.抑制癌细胞
-
-									<br /> 在鲜柑橘汁中，有一种抗癌活性很强的物质“诺米灵”，它能使致癌化学物质分解，抑制和阻断癌细胞的生长，能使人体内除毒酶的活性成倍提高，阻止致癌物对细胞核的损伤，保护基因的完好。
-									<br /> 5.减肥
-
-									<br /> 橘子内含的酵素能有效抑制制造脂肪的细胞，再加上含有降低体脂肪的食物纤维、以及容易产生饱足感，所以便有减肥功效。
-									<br /> 6.预防心血管疾病
-
-									<br /> 橘皮苷可以加强毛细血管的韧性，降血压，扩张心脏的冠状动脉，故橘子是预防冠心病和动脉硬化的食品，研究证实，食用柑橘可以降低沉积在动脉血管中的胆固醇，有助于使动脉粥样硬化发生逆转。
-									<br />
-
-								</p>
-								<strong class="title2">橘子的食用禁忌</strong>
-								<p>
-									1.风寒咳嗽者、痰饮咳嗽者不宜食用。<br /><br /> 2.吃橘子前后1小时不要喝牛奶，因为牛奶中的蛋白质遇到果酸会凝固，影响消化吸收。
-									<br /><br /> 3.橘子不宜多吃，吃完应及时刷牙涑口，以免对口腔牙齿有害。
-									<br /><br /> 4.饭前或空腹时不宜食用。
-								</p>
-
-								<strong class="title2"><a href="#">橘子的搭配宜忌</a></strong>
+								<strong class="title2"><a href="#">{{info.ma_name}}的搭配宜忌</a></strong>
 								<ul class="clearfix">
 
-									<li class="ji">
+									<li class="ji" v-for="(item,index) in info.ma_taboo">
 										<div class="t">忌</div>
-										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
-										<span class="add "></span>
-										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
 										<p>
-											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
-										</p>
-									</li>
-
-									<li class="ji">
-										<div class="t">忌</div>
-										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
-										<span class="add "></span>
-										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
-										<p>
-											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
-										</p>
-									</li>
-
-									<li class="ji">
-										<div class="t">忌</div>
-										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
-										<span class="add "></span>
-										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
-										<p>
-											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
-										</p>
-									</li>
-
-									<li class="ji">
-										<div class="t">忌</div>
-										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
-										<span class="add "></span>
-										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
-										<p>
-											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
-										</p>
-									</li>
-
-									<li class="ji">
-										<div class="t">忌</div>
-										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
-										<span class="add "></span>
-										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
-										<p>
-											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
-										</p>
-									</li>
-
-									<li class="ji">
-										<div class="t">忌</div>
-										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
-										<span class="add "></span>
-										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
-										<p>
-											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
-										</p>
-									</li>
-
-									<li class="ji">
-										<div class="t">忌</div>
-										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
-										<span class="add "></span>
-										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
-										<p>
-											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
-										</p>
-									</li>
-
-									<li class="ji">
-										<div class="t">忌</div>
-										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
-										<span class="add "></span>
-										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
-										<p>
-											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
-										</p>
-									</li>
-
-									<li class="ji">
-										<div class="t">忌</div>
-										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
-										<span class="add "></span>
-										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
-										<p>
-											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
-										</p>
-									</li>
-
-									<li class="ji">
-										<div class="t">忌</div>
-										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
-										<span class="add "></span>
-										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
-										<p>
-											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
-										</p>
-									</li>
-
-									<li class="ji">
-										<div class="t">忌</div>
-										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
-										<span class="add "></span>
-										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
-										<p>
-											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
-										</p>
-									</li>
-
-									<li class="ji">
-										<div class="t">忌</div>
-										<router-link to='#' class="img"><img src="../../static/img/test01.jpg" /></router-link>
-										<span class="add "></span>
-										<router-link to='#' class="img"><img src="../../static/img/test03.jpg" /></router-link>
-										<p>
-											<router-link to='#'>橘子 + 大闸蟹，令患软痈</router-link>
+											<router-link to='#'>{{item}}</router-link>
 										</p>
 									</li>
 
 								</ul>
-								<strong class="title2">橘子的选购</strong>
+								<strong class="title2">{{info.ma_name}}的选购</strong>
 
-								<p>橘子的底部有明显小圆圈的，为雌橘子，有小圆点的则为雄橘子。雌橘子多半比雄橘子要甜一些。橘子底部捏起来感觉软的，多为甜橘子，捏起来硬硬的，一般皮较厚，吃起来口感多半较酸。拿起橘子,侧面看,长柄的一端突出的比凹进去的酸。</p>
+								<p>{{info.ma_shop}}</p>
 
-								<strong class="title2">橘子的存储</strong>
-								<p>首先橘子上不能带水，有一只带水就易腐烂而影响其余的橘子。把橘子放到篮子里或纸箱中，放在屋内（周围不要有热源，如厨房、冰箱旁等就不行），要通风，但不能让风直接吹到它们，这样会失水份的。 橘子放冰箱有个缺点：果味会变酸。
+								<strong class="title2">{{info.ma_name}}的存储</strong>
+								<p v-for="item in info.storage">{{item}}</p>
 
-									<br /> <br /> 把水烧开，把桔子放进去，泡10秒钟，捞出来，晾干后放入塑料袋，挤出空气，放进冰箱，可保存将近20天
-								</p>
-
-								<strong class="title2">橘子的烹饪小技巧</strong>
-								<p>橘子不仅可以直接吃，还可以做成果酱、榨汁等。</p>
+								<strong class="title2">{{info.ma_name}}的烹饪小技巧</strong>
+								<p v-for="item in info.ma_skill">{{item}}</p>
 							</div>
 
 						</el-col>
@@ -285,13 +98,24 @@
 	export default {
 		name: 'Detail',
 		mounted: function() {
-			this.$store.commit('changeTopFlag', 2)
+			let _this = this;
+			this.$store.commit('changeTopFlag', 2);
+			_this.$http.get('/detail', {
+					params: {
+						ma_id: 1
+					}
+				}).then(response => {
+					console.log(response.data);
+					_this.info = response.data.info;
+				})
 		},
 		components: {
 			menuItem
 		},
 		data() {
-			return {}
+			return {
+				info:''
+			}
 		}
 	}
 </script>
@@ -344,15 +168,6 @@
 		font-size: 32px;
 		font-family: Microsoft Yahei;
 		font-weight: normal;
-	}
-	
-	.cen_left a {
-		height: 26px;
-		width: 26px;
-		display: inline-block;
-		vertical-align: top;
-		margin: 15px 5px;
-		background: url(../assets/car.jpg) left top no-repeat;
 	}
 	
 	.p1 {
@@ -444,7 +259,9 @@
 	.menu_view {
 		margin-bottom: 20px;
 	}
-	
+	.right_view {
+		height: 700px;
+	}
 	.chose_items {
 		height: 650px;
 		width: 230px;

@@ -114,7 +114,7 @@
 					<h3>{{info.m_name}}成品图</h3>
 					<div>
 						<el-carousel arrow="never" trigger="click">
-							<el-carousel-item v-for='item in info.finished' :key='item'>
+							<el-carousel-item v-for='(item,index) in info.finished' :key='index'>
 								<img :src="item" />
 							</el-carousel-item>
 						</el-carousel>
@@ -172,7 +172,8 @@
 	}
 	
 	.left_img img {
-		height: 452px;
+		width: 100%;
+		min-height: 452px;
 	}
 	
 	.right_box {

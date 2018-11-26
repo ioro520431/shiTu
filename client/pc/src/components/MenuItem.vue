@@ -78,18 +78,19 @@
 		overflow: hidden;
 		position: relative;
 		z-index: 2;
-		width: 238px;
+		width: 100%;
 		height: 238px;
 	}
 	.item_box img {
-		width: 238px;
+		width: 100%;
+		min-height: 238px;
 	}
 	
 	.text {
 		position: absolute;
 		z-index: 1;
 		bottom: -94px;
-		width: 238px;
+		width: 100%;
 		height: 188px;
 		transition: all .5s;
 	}
@@ -97,7 +98,7 @@
 	.top,
 	.bottom {
 		padding: 15px;
-		width: 208px;
+		width: 89%;
 		height: 64px;
 	}
 	

@@ -3,18 +3,18 @@
 		<div class="prev_btn" @mouseover="stop" @mouseout="start" @click="prev"></div>
 		<div class="views" @mouseover="stop" @mouseout="start">
 			<span class="item">
-			<router-link to='javaScript:void(0)'><span @mouseover="change(0)" :class="{item_active:flag==0}">最新</span></router-link>
+			<a href='javaScript:void(0)'><span @mouseover="change(0)" :class="{item_active:flag==0}">最新</span></a>
 			<span><span class="line"></span>最热：</span>
-			<router-link to='javaScript:void(0)'><span @mouseover="change(1)" :class="{item_active:flag==1}">一小时</span></router-link>
-			<router-link to='javaScript:void(0)'><span @mouseover="change(2)" :class="{item_active:flag==2}">今日</span></router-link>
-			<router-link to='javaScript:void(0)'><span @mouseover="change(3)" :class="{item_active:flag==3}">七天</span></router-link>
-			<router-link to='#'>更多菜谱<i class="el-icon-arrow-right"></i></router-link>
+			<a href='javaScript:void(0)'><span @mouseover="change(1)" :class="{item_active:flag==1}">一小时</span></a>
+			<a href='javaScript:void(0)'><span @mouseover="change(2)" :class="{item_active:flag==2}">今日</span></a>
+			<a href='javaScript:void(0)'><span @mouseover="change(3)" :class="{item_active:flag==3}">七天</span></a>
+			<router-link to='/material?id=000'>更多菜谱<i class="el-icon-arrow-right"></i></router-link>
 			</span>
 			<div class="view" :class="{leftOne:flag==0,leftTwo:flag==1,leftThree:flag==2,leftFour:flag==3}">
-				<hotItem></hotItem>
-				<hotItem></hotItem>
-				<hotItem></hotItem>
-				<hotItem></hotItem>
+				<hotItem :list='info.new'></hotItem>
+				<hotItem :list='info.hour'></hotItem>
+				<hotItem :list='info.today'></hotItem>
+				<hotItem :list='info.week'></hotItem>
 			</div>
 		</div>
 		<div class="next_btn" @mouseover="stop" @mouseout="start" @click="autoPlay"></div>
@@ -25,12 +25,19 @@
 	import hotItem from './HotItem.vue'
 	export default {
 		name: 'Hot',
+		mounted: function() {
+			let _this = this;
+			_this.$http.get('/hot_menu', {}).then(response => {
+				_this.info = response.data;
+			})
+		},
 		components: {
 			hotItem
 		},
 		data() {
 			return {
-				flag: 0
+				flag: 0,
+				info:''
 			}
 		},
 		methods: {

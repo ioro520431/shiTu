@@ -4,30 +4,8 @@
 		<div class="menus">
 			<div class="upper">
 				<el-row :gutter='20'>
-					<el-col :span='6' class='menu'>
-						<menuItem></menuItem>
-					</el-col>
-					<el-col :span='6' class='menu'>
-						<menuItem></menuItem>
-					</el-col>
-					<el-col :span='6' class='menu'>
-						<menuItem></menuItem>
-					</el-col>
-					<el-col :span='6' class='menu'>
-						<menuItem></menuItem>
-					</el-col>
-				</el-row>
-			</div>
-			<div class="lower">
-				<el-row :gutter='20'>
-					<el-col :span='6' class='menu'>
-						<menuItem></menuItem>
-					</el-col>
-					<el-col :span='6' class='menu'>
-						<menuItem></menuItem>
-					</el-col>
-					<el-col :span='6' class='menu'>
-						<menuItem></menuItem>
+					<el-col :span='6' class='menu' v-for='(item,index) in list' :key='index'>
+						<menuItem :menuInfo='item'></menuItem>
 					</el-col>
 					<el-col :span='6' class='menu'>
 						<div class="hot_menu">
@@ -72,6 +50,9 @@
 	import menuItem from './MenuItem.vue'
 	export default {
 		name: 'hotItem',
+		props:{
+			list:Array
+		},
 		components: {
 			menuItem
 		}
@@ -106,6 +87,7 @@
 	}
 	.menu {
 		height: 332px;
+		margin-bottom: 20px;
 	}
 	.hot_menu {
 		width: 100%;

@@ -74,14 +74,14 @@
 	.box img {
 		position: relative;
 		z-index: 2;
-		width: 238px;
+		width: 100%;
 	}
 	
 	.box .curtain {
 		position: absolute;
 		z-index: 3;
 		background-color: rgba(0, 0, 0, .5);
-		width: 238px;
+		width: 100%;
 		height: 188px;
 		right: -238px;
 		top: 0;
@@ -110,14 +110,14 @@
 	}
 	
 	.text {
-		width: 238px;
+		width: 100%;
 		height: 98px;
 		transition: all .5s;
 	}
 	
 	.top {
 		padding: 15px;
-		width: 208px;
+		width: 87%;
 		height: 68px;
 	}
 	

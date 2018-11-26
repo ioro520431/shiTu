@@ -3,23 +3,8 @@
 		<el-col :span='18' :offset='3'>
 			<h2>跟我学做菜吧</h2>
 			<el-row :gutter='20'>
-				<el-col :span='8' class='item'>
-					<vedioItem></vedioItem>
-				</el-col>
-				<el-col :span='8' class='item'>
-					<vedioItem></vedioItem>
-				</el-col>
-				<el-col :span='8' class='item'>
-					<vedioItem></vedioItem>
-				</el-col>
-				<el-col :span='8' class='item'>
-					<vedioItem></vedioItem>
-				</el-col>
-				<el-col :span='8' class='item'>
-					<vedioItem></vedioItem>
-				</el-col>
-				<el-col :span='8' class='item'>
-					<vedioItem></vedioItem>
+				<el-col :span='8' class='item' v-for='(item,index) in info' :key='index'>
+					<vedioItem :info='item'></vedioItem>
 				</el-col>
 			</el-row>
 			<div id="foot_btn">
@@ -34,10 +19,19 @@
 	export default {
 		name:'RecipeVideo',
 		mounted: function() {
-			this.$store.commit('changeTopFlag', 5)
+			let _this = this;
+			_this.$http.get('/recipe_vedio',{}).then(response=>{
+				this.$store.commit('changeTopFlag', 5);
+				_this.info = response.data;
+			})
 		},
 		components:{
 			vedioItem
+		},
+		data(){
+			return {
+				info:''
+			}
 		}
 	}
 </script>

@@ -15,7 +15,7 @@ module.exports = function () {
         this.connection.connect();
     };
 
-    this.selectMenu = function (menuId, call) {
+    this.selectMenu = function (menuId,call) {
         var userGetSql = "SELECT * FROM menu WHERE m_id=" + menuId;
         this.connection.query(userGetSql, function (err, result) {
             if (err) {
@@ -25,8 +25,9 @@ module.exports = function () {
             call(result);
         });
     };
-    this.selectMenuByKey = (info, call)=>{
-        var userGetSql = "SELECT * FROM menu where "+info[0]+" like '%"+info[1]+"%';";
+    this.selectMenuByKey = (info,call,str='')=>{
+        var userGetSql = "SELECT * FROM menu where "+info[0]+" like '%"+info[1]+"%'"+str+";";
+        console.log(userGetSql)
         this.connection.query(userGetSql, function (err, result) {
             if (err) {
                 console.log('[INSERT ERROR] - ', err.message);
@@ -35,21 +36,67 @@ module.exports = function () {
             call(result);
         });
     };
-    this.insertUser = function (info, call) {
-        var userAddSql = "INSERT INTO users(u_name,u_pwd,name,sex,home,address,birthday) values(?,?,?,?,?,?,?)";
-        var userAddSql_params = [];
-        for (var index in info) {
-            userAddSql_params.push(info[index]);
-        }
-        this.connection.query(userAddSql, userAddSql_params, function (err, result) {
+    this.selectMaterialByKey = (info,call)=>{
+        var userGetSql = "SELECT * FROM material where "+info[0]+" = '"+info[1]+"';";
+        this.connection.query(userGetSql, function (err, result) {
             if (err) {
                 console.log('[INSERT ERROR] - ', err.message);
                 return;
             }
             call(result);
         });
-    }
-
+    };
+    this.selectVedios = call =>{
+        var userGetSql = "SELECT v_id,v_name,v_pic,v_time FROM vedios;";
+        this.connection.query(userGetSql, function (err, result) {
+            if (err) {
+                console.log('[INSERT ERROR] - ', err.message);
+                return;
+            }
+            call(result);
+        });
+    };
+    this.selectVedioById = (v_id,call)=>{
+        var userGetSql = "SELECT * FROM vedios WHERE v_id='"+v_id+"';";
+        this.connection.query(userGetSql, function (err, result) {
+            if (err) {
+                console.log('[INSERT ERROR] - ', err.message);
+                return;
+            }
+            call(result);
+        });
+    };
+    this.selectOtherVedio = (v_id,call)=>{
+        var userGetSql = "SELECT v_id,v_name,v_pic,v_time FROM vedios WHERE v_id!='"+v_id+"';";
+        this.connection.query(userGetSql, function (err, result) {
+            if (err) {
+                console.log('[INSERT ERROR] - ', err.message);
+                return;
+            }
+            call(result);
+        });
+    };
+    this.selectMenuByTime = (time,call)=>{
+        var userGetSql = "SELECT * FROM menu WHERE creat_at ='"+time+"'  LIMIT 0,7;";
+        this.connection.query(userGetSql, function (err, result) {
+            if (err) {
+                console.log('[INSERT ERROR] - ', err.message);
+                return;
+            }
+            call(result);
+        });
+    };
+    this.selectMenuByItem = (str,call)=>{
+        var userGetSql = "SELECT * FROM menu WHERE "+str+";";
+        console.log(userGetSql)
+        this.connection.query(userGetSql, function (err, result) {
+            if (err) {
+                console.log('[INSERT ERROR] - ', err.message);
+                return;
+            }
+            call(result);
+        });
+    };
     this.closeConnecte = function(){
         //3,连接结束
         this.connection.end();
