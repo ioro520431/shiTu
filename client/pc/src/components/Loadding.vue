@@ -7,7 +7,7 @@
 
 			<div class="loadding-top ">
 
-				<el-form ref="form" >
+				<el-form ref="form">
 
 					<div class="loadding-title">
 						<p>标题</p>
@@ -25,7 +25,7 @@
 					</el-col>
 				</el-form>
 
-				<el-form ref="form" >
+				<el-form ref="form">
 					<el-col :span="24">
 						<div class="loadding-title">
 							<p>自媒体标题（8-30个字符）：</p>
@@ -38,7 +38,7 @@
 
 				</el-form>
 
-				<el-form ref="form" >
+				<el-form ref="form">
 
 					<el-col :span="24">
 						<div class="loadding-title">
@@ -364,10 +364,10 @@
 				<p class="finish">我要参加</p>
 
 				<form action="" method="get">
-					
+
 					<div class="end-radio"><label><input name="Fruit" type="radio" value="" />霸王超市丨记忆中的回味，中卓炸酱面<a href="#">(详情>>)</a></label></div>
 					<div class="end-radio"><label><input name="Fruit" type="radio" value="" />霸王超市丨肠伴左右，科尔沁联合征集活动<a href="#">(详情>>)</a></label></div>
-					
+
 				</form>
 
 			</div>
@@ -384,7 +384,6 @@
 </template>
 
 <script>
-
 	export default {
 		name: 'Loadding',
 		data() {
@@ -433,7 +432,7 @@
 	}
 </script>
 
-<style scoped>
+<style>
 	.w {
 		width: 970px;
 		margin: 0 auto;
@@ -482,7 +481,7 @@
 	
 	.el-input1 {
 		margin-top: 10px;
-		margin-left: -45px;
+		margin-left: -55px;
 	}
 	
 	.loadding-text0 {
@@ -620,7 +619,7 @@
 	.main-input1 {
 		width: 200px;
 		height: 40px;
-		margin-left: 10px;
+		margin-left: 0px;
 		padding-left: 10px;
 	}
 	
@@ -834,18 +833,20 @@
 		height: 178px;
 		display: block;
 	}
+	
 	.end-radio {
 		margin-top: 5px;
 	}
+	
 	.end-button {
 		margin-top: 20px;
 		padding-bottom: 30px;
 		display: flex;
 		justify-content: center;
 	}
+	
 	.end-button1 {
 		width: 140px;
 		height: 45px;
 	}
-	
 </style>

@@ -171,7 +171,7 @@
 							<router-link to='/recipe_video'><strong :class="{active:topFlag==5}">菜谱视频</strong></router-link>
 						</li>
 						<li>
-							<router-link to='#'><strong :class="{active:topFlag==7}">微信小程序</strong></router-link>
+							<router-link to='#'><strong :class="{active:topFlag==7}">手机APP</strong></router-link>
 						</li>
 					</ul>
 				</nav>
@@ -198,6 +198,7 @@
 					u_id: ''
 				});
 				alert('您已安全退出该账户...');
+				this.$router.replace('/home');
 			}
 		},
 		computed: {

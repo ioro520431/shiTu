@@ -35,18 +35,18 @@
 				<div class="healthy_view">
 					<el-row :gutter='20' class='healthy_case'>
 						<el-col :span='12'>
-							<healthy></healthy>
+							<healthy :mainInfo='healItems[0]'></healthy>
 						</el-col>
 						<el-col :span='12'>
-							<healthy></healthy>
+							<healthy :mainInfo='healItems[1]'></healthy>
 						</el-col>
 					</el-row>
 					<el-row :gutter='20' class='healthy_case'>
 						<el-col :span='12'>
-							<healthy></healthy>
+							<healthy :mainInfo='healItems[2]'></healthy>
 						</el-col>
 						<el-col :span='12'>
-							<healthy></healthy>
+							<healthy :mainInfo='healItems[3]'></healthy>
 						</el-col>
 					</el-row>
 				</div>
@@ -86,7 +86,17 @@
 		data() {
 			return {
 				activeName: 'first',
-				list: ''
+				list: '',
+				healItems:[
+				{	kind:'011',
+					title:'饮食小常识'},
+				{	kind:'012',
+					title:'饮食禁忌'},
+				{	kind:'021',
+					title:'新鲜资讯'},
+				{	kind:'022',
+					title:'食品安全'}
+				]
 			}
 		}
 	}

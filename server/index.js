@@ -37,6 +37,10 @@ app.post('/register',indexController.register);
 
 app.get('/collection',indexController.collection);
 
+app.get('/person',indexController.person);
+
+app.get('/cancel',indexController.cancel);
+
 //菜谱路由控制器
 var menuController = require('./Controllers/MenuController');
 
@@ -48,7 +52,13 @@ app.get('/hot_menu',menuController.hotMenu);
 
 app.get('/item_menu',menuController.itemMenu);
 
+app.get('/heath_menu',menuController.heathMenu);
 
+app.get('/heal_item',menuController.healItem);
+
+app.get('/adjust',menuController.adjustMenu);
+
+app.get('/home_heal',menuController.homeHeal);
 
 //食材路由控制器
 var marterialController = require('./Controllers/MarterialController');
@@ -58,8 +68,6 @@ app.get('/material',marterialController.material);
 app.get('/detail',marterialController.detail);
 
 app.get('/home',marterialController.home);
-
-
 
 //视频路由控制器
 var vedioController = require('./Controllers/VedioController');

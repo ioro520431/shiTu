@@ -79,6 +79,39 @@ module.exports = function () {
             call(result)
         })
     };
+    //根据调理方式模糊查询菜谱
+    this.selectMenuByAdjust = (ad_text,call)=>{
+        let _this = this;
+        let arr = [];
+        for (const key in ad_text) {
+            if (ad_text[key]) {
+                arr.push('tip like \'%'+ad_text[key]+'%\'')
+            }
+        }
+        let str = arr.join(' or ');
+        this.menuDao.selectMenuByTip(str,result=>{
+            for (let index in result) {
+                result[index].tip = _this.dealData(result[index].tip);
+                result[index].step = _this.dealData(result[index].step);
+            }
+            call(result);
+        })
+    };
+    //根据种类查询健康食谱
+    this.selectHealthyMenu = (heal_kind,call)=>{
+        this.menuDao.selectHealthyByKind(heal_kind,result=>{
+            call(result)
+        })
+    };
+    //根据饮食健康咨询id查询健康咨询信息
+    this.selectHealthyMenuById = (heal_id,call)=>{
+        let _this = this;
+        _this.menuDao.selectHealthyByKey(['h_id',heal_id],result=>{
+            let data = result[0];
+            data.h_text = _this.dealData(data.h_text);
+            call(data)
+        })
+    };
     //字符串处理函数
     this.dealData = (str) => {
         if (str) {

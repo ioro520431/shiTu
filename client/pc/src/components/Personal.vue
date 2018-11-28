@@ -5,27 +5,28 @@
 			<div class="info_box">
 				<img src="../../static/img/test_user.jpg" />
 				<div class="info_middle">
-					<h2>哲哉丶</h2>
+					<h2>{{userInfo.name}}</h2>
 					<span>
-						<i>男</i>
-						<i>四川省成都市</i>
+						<i>{{userInfo.sex?'女':'男'}}</i>
+						<i>{{userInfo.address}}</i>
 						<i>修改个人资料</i>
 					</span>
 				</div>
 				<el-button>
-					<router-link to='#' class='release'>发布菜谱</router-link>
+					<router-link to='/personal' class='release'>发布菜谱</router-link>
 				</el-button>
 			</div>
 			<div class="main_content">
-				<el-tabs v-model="activeName2" type="card">
-					<el-tab-pane label="我的菜谱" name="first">
-						<!--<el-row :gutter='20'>
-							<el-col :span='6' class='row' v-for='item in 2' :key='item'>
-								<menuItem></menuItem>
+				<el-tabs v-model="activeName" type="card">
+					<el-tab-pane label="我的收藏" name="first">
+						<el-row :gutter='20'>
+							<el-col :span='6' class='row' v-for='(item,index) in collection' :key='index'>
+								<menuItem :menuInfo='item'></menuItem>
+								<div class="cancel" @click="cancel(item.f_id)">取消收藏</div>
 							</el-col>
-						</el-row>-->
+						</el-row>
 					</el-tab-pane>
-					<el-tab-pane label="我的收藏" name="second">
+					<el-tab-pane label="我的菜谱" name="second">
 						<!--<el-row :gutter='20'>
 							<el-col :span='6' class='row' v-for='item in 2' :key='item'>
 								<menuItem></menuItem>
@@ -42,12 +43,42 @@
 	import menuItem from './MenuItem.vue';
 	export default {
 		name: 'Personal',
+		mounted: function() {
+			this.$store.commit('changeTopFlag', 0);
+			this.initialize()
+		},
 		data() {
 			return {
-				activeName2: 'first'
+				activeName: 'first',
+				userInfo:'',
+				collection:''
 			};
 		},
 		methods: {
+			initialize(){
+				let _this = this;
+				_this.$http.get('/person',{
+						params:{
+							u_id:_this.$store.state.userState.u_id
+						}
+				}).then(response=>{
+					_this.userInfo = response.data.userInfo;
+					_this.collection = response.data.collection;
+				})
+			},
+			cancel(f_id){
+				let _this = this;
+				_this.$http.get('/cancel',{
+					params:{
+						f_id:f_id
+					}
+				}).then(response=>{
+					if(response.data.state==1){
+						alert(response.data.msg);
+						 _this.initialize();
+					}
+				})
+			}
 		},
 		watch:{
 			activeName2(val){
@@ -133,7 +164,17 @@
 	}
 	.row {
 		margin-bottom: 20px;
-		/*background-color: darkgray;*/
+	}
+	.cancel {
+		width: 100%;
+		height: 30px;
+		font-size: 14px;
+		letter-spacing: 4px;
+		line-height: 30px;
+		color: #8B4513;
+		background-color: white;
+		text-align: center;
+		cursor: pointer;
 	}
 </style>
 <style type="text/css">

@@ -94,5 +94,12 @@ export default new Router({
       component: Loadding
     }
   ],
-  mode: 'history'
+  mode: 'history',
+  //使得页面刷新回到顶部
+  scrollBehavior(to, from,savedPosition) {
+    return {
+      x: 0,
+      y: 0
+    }
+  }
 })

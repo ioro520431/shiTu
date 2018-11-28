@@ -52,13 +52,13 @@
 					<dl class="main">
 						<dt>人群膳食</dt>
 						<dd>
-							<router-link to='/diet_health?id=111' :class='{active_kind:showSmallTitle==11}'>孕妇</router-link>
+							<router-link to='/diet_health?id=111' :class='{active_kind:showSmallTitle==11}'>老年人</router-link>
 						</dd>
 						<dd>
-							<router-link to='/diet_health?id=112' :class='{active_kind:showSmallTitle==12}'>老人</router-link>
+							<router-link to='/diet_health?id=112' :class='{active_kind:showSmallTitle==12}'>产妇</router-link>
 						</dd>
 						<dd>
-							<router-link to='/diet_health?id=113' :class='{active_kind:showSmallTitle==13}'>青少年</router-link>
+							<router-link to='/diet_health?id=113' :class='{active_kind:showSmallTitle==13}'>孕妇</router-link>
 						</dd>
 						<dd>
 							<router-link to='/diet_health?id=114' :class='{active_kind:showSmallTitle==14}'>幼儿</router-link>
@@ -69,16 +69,16 @@
 					<dl class="main">
 						<dt>疾病调理</dt>
 						<dd>
-							<router-link to='/diet_health?id=211' :class='{active_kind:showSmallTitle==11}'>糖尿病</router-link>
+							<router-link to='/diet_health?id=211' :class='{active_kind:showSmallTitle==11}'>感冒</router-link>
 						</dd>
 						<dd>
-							<router-link to='/diet_health?id=212' :class='{active_kind:showSmallTitle==12}'>高血压</router-link>
+							<router-link to='/diet_health?id=212' :class='{active_kind:showSmallTitle==12}'>补钙</router-link>
 						</dd>
 						<dd>
-							<router-link to='/diet_health?id=213' :class='{active_kind:showSmallTitle==13}'>痛风</router-link>
+							<router-link to='/diet_health?id=213' :class='{active_kind:showSmallTitle==13}'>降糖</router-link>
 						</dd>
 						<dd>
-							<router-link to='/diet_health?id=214' :class='{active_kind:showSmallTitle==14}'>胃炎</router-link>
+							<router-link to='/diet_health?id=214' :class='{active_kind:showSmallTitle==14}'>降血压</router-link>
 						</dd>
 					</dl>
 				</div>
@@ -86,16 +86,16 @@
 					<dl class="main">
 						<dt>功能性调理</dt>
 						<dd>
-							<router-link to='/diet_health?id=311' :class='{active_kind:showSmallTitle==11}'>清热去火</router-link>
+							<router-link to='/diet_health?id=311' :class='{active_kind:showSmallTitle==11}'>美容护肤</router-link>
 						</dd>
 						<dd>
 							<router-link to='/diet_health?id=312' :class='{active_kind:showSmallTitle==12}'>减肥</router-link>
 						</dd>
 						<dd>
-							<router-link to='/diet_health?id=313' :class='{active_kind:showSmallTitle==13}'>乌发</router-link>
+							<router-link to='/diet_health?id=313' :class='{active_kind:showSmallTitle==13}'>强身健体</router-link>
 						</dd>
 						<dd>
-							<router-link to='/diet_health?id=314' :class='{active_kind:showSmallTitle==14}'>健脾开胃</router-link>
+							<router-link to='/diet_health?id=314' :class='{active_kind:showSmallTitle==14}'>预防疾病</router-link>
 						</dd>
 					</dl>
 				</div>
@@ -103,47 +103,41 @@
 					<dl class="main">
 						<dt>脏腑调理</dt>
 						<dd>
-							<router-link to='/diet_health?id=411' :class='{active_kind:showSmallTitle==11}'>感冒</router-link>
+							<router-link to='/diet_health?id=411' :class='{active_kind:showSmallTitle==11}'>软化血管</router-link>
 						</dd>
 						<dd>
-							<router-link to='/diet_health?id=412' :class='{active_kind:showSmallTitle==12}'>补血</router-link>
+							<router-link to='/diet_health?id=412' :class='{active_kind:showSmallTitle==12}'>健脾</router-link>
 						</dd>
 						<dd>
-							<router-link to='/diet_health?id=413' :class='{active_kind:showSmallTitle==13}'>腹泻</router-link>
+							<router-link to='/diet_health?id=413' :class='{active_kind:showSmallTitle==13}'>保肝</router-link>
 						</dd>
 						<dd>
-							<router-link to='/diet_health?id=414' :class='{active_kind:showSmallTitle==14}'>活血化瘀</router-link>
+							<router-link to='/diet_health?id=414' :class='{active_kind:showSmallTitle==14}'>防癌</router-link>
 						</dd>
 					</dl>
 				</div>
 			</nav>
 			<div class="main_content">
 				<h2>身体健康，仍是饮食的重要目标</h2>
-				<el-row :gutter='20'>
-					<el-col :span='6' class='item_row'>
-						<foodItem></foodItem>
-					</el-col>
-					<el-col :span='6' class='item_row'>
-						<foodItem></foodItem>
-					</el-col>
-					<el-col :span='6' class='item_row'>
-						<foodItem></foodItem>
-					</el-col>
-					<el-col :span='6' class='item_row'>
-						<foodItem></foodItem>
-					</el-col>
-					<el-col :span='6' class='item_row'>
-						<foodItem></foodItem>
-					</el-col>
-					<el-col :span='6' class='item_row'>
-						<foodItem></foodItem>
-					</el-col>
-					<el-col :span='6' class='item_row'>
-						<foodItem></foodItem>
-					</el-col>
-				</el-row>
-				<div id="foot_btn">
-					<el-pagination background layout="prev, pager, next" :total="500" :page-size='12'></el-pagination>
+				<div v-if='showBigTile==0'>
+					<el-row :gutter='20'>
+						<el-col :span='6' class='item_row' v-for='(item,index) in healInfo' :key='index' v-if='index>=(page*pageSize+0)&&index<(page*pageSize+pageSize)'>
+							<foodItem :healItem='item'></foodItem>
+						</el-col>
+					</el-row>
+					<div id="foot_btn">
+						<el-pagination background layout="prev, pager, next" :total="healInfo.length" :page-size='pageSize' @current-change='changePage'></el-pagination>
+					</div>
+				</div>
+				<div v-if='showBigTile>0'>
+					<el-row :gutter='20'>
+						<el-col :span='6' class='item_row' v-for='(item,index) in menuInfo' :key='index' v-if='index>=(page*pageSize+0)&&index<(page*pageSize+pageSize)'>
+							<menuItem :menuInfo='item'></menuItem>
+						</el-col>
+					</el-row>
+					<div id="foot_btn">
+						<el-pagination background layout="prev, pager, next" :total="menuInfo.length" :page-size='pageSize' @current-change='changePage'></el-pagination>
+					</div>
 				</div>
 			</div>
 		</el-col>
@@ -152,23 +146,124 @@
 
 <script>
 	import foodItem from './FoodItem.vue';
+	import menuItem from './MenuItem.vue';
 	export default {
-		name:'DietHealth',
+		name: 'DietHealth',
 		mounted: function() {
 			this.$store.commit('changeTopFlag', 3);
-			this.showBigTile = parseInt(this.$route.query.id/100);
-			this.showSmallTitle = this.$route.query.id%100;
+			this.showBigTile = parseInt(this.$route.query.id / 100);
+			this.showSmallTitle = this.$route.query.id % 100;
+			let index = this.showSmallTitle % 10;
+			let _this = this;
+			if(this.showBigTile == 0) {
+				_this.$http.get('/heath_menu', {
+					params: {
+						heal_kind: this.$route.query.id
+					}
+				}).then(response => {
+					_this.healInfo = response.data;
+				})
+			} else if(this.showBigTile == 1) {
+				_this.$http.get('/menu', {
+					params: {
+						menu_kind: _this.items[0][index]
+					}
+				}).then(response => {
+					_this.menuInfo = response.data;
+				})
+			} else if(this.showBigTile > 1) {
+				if(index == 0) {
+					let obj = {
+						one: _this.items[_this.showBigTile - 1][0],
+						two: _this.items[_this.showBigTile - 1][1],
+						three: _this.items[_this.showBigTile - 1][2],
+						four: _this.items[_this.showBigTile - 1][3]
+					}
+					_this.$http.get('/adjust', {
+						params: obj
+					}).then(response => {
+						_this.menuInfo = response.data;
+					})
+				} else {
+					let obj = {
+						one: _this.items[_this.showBigTile - 1][index - 1]
+					}
+					_this.$http.get('/adjust', {
+						params: obj
+					}).then(response => {
+						_this.menuInfo = response.data;
+					})
+				}
+			}
 		},
 		data() {
 			return {
 				showBigTile: 0,
-				showSmallTitle: 11
+				showSmallTitle: 11,
+				pageSize: 8,
+				page: 0,
+				items: [
+					['03', '031', '032', '033', '034'],
+					['感冒', '补钙', '降糖', '降血压'],
+					['美容护肤', '减肥', '强身健体', '预防疾病'],
+					['软化血管', '健脾', '保肝', '防癌']
+				],
+				healInfo: '',
+				menuInfo: ''
 			};
+		},
+		methods: {
+			changePage(page) {
+				this.page = page - 1;
+			}
 		},
 		watch: {
 			queryValue(val, oldVal) {
-				this.showBigTile = parseInt(val/100);
-				this.showSmallTitle = val%100;
+				this.showBigTile = parseInt(val / 100);
+				this.showSmallTitle = val % 100;
+				let index = this.showSmallTitle % 10;
+				let _this = this;
+				if(this.showBigTile == 0) {
+					_this.$http.get('/heath_menu', {
+						params: {
+							heal_kind: this.$route.query.id
+						}
+					}).then(response => {
+						_this.healInfo = response.data;
+					})
+				} else if(this.showBigTile == 1) {
+					_this.$http.get('/menu', {
+						params: {
+							menu_kind: _this.items[0][index]
+						}
+					}).then(response => {
+						_this.menuInfo = response.data;
+					})
+				} else if(this.showBigTile > 1) {
+					if(index == 0) {
+						let obj = {
+							one: _this.items[_this.showBigTile - 1][0],
+							two: _this.items[_this.showBigTile - 1][1],
+							three: _this.items[_this.showBigTile - 1][2],
+							four: _this.items[_this.showBigTile - 1][3]
+						}
+						_this.$http.get('/adjust', {
+							params: obj
+						}).then(response => {
+							_this.menuInfo = response.data;
+						})
+					} else {
+						let obj = {
+							one: _this.items[_this.showBigTile - 1][index - 1]
+						}
+						_this.$http.get('/adjust', {
+							params: obj
+						}).then(response => {
+							_this.menuInfo = response.data;
+						})
+					}
+
+				}
 			},
 		},
 		computed: {
@@ -176,8 +271,9 @@
 				return this.$route.query.id
 			}
 		},
-		components:{
-			foodItem
+		components: {
+			foodItem,
+			menuItem
 		}
 	}
 </script>
@@ -187,9 +283,11 @@
 		width: 100%;
 		min-width: 1349px;
 	}
+	
 	.content {
 		margin-bottom: 40px;
 	}
+	
 	.content>h2 {
 		width: 961px;
 		height: 120px;
@@ -202,6 +300,7 @@
 		font-weight: normal;
 		color: #8B4513;
 	}
+	
 	nav {
 		width: 100%;
 		font-size: 0;
@@ -316,6 +415,7 @@
 		background-color: #8B4513;
 		color: white;
 	}
+	
 	.main_content>h2 {
 		width: 100%;
 		height: 120px;
@@ -324,11 +424,13 @@
 		font-weight: normal;
 		color: #8B4513;
 	}
+	
 	.item_row {
 		margin-bottom: 20px;
 	}
+	
 	#foot_btn {
-		padding: 44px 0 ;
+		padding: 44px 0;
 		text-align: center;
 	}
 </style>
@@ -336,9 +438,11 @@
 	#foot_btn .el-pagination .number.active {
 		background-color: #8B4513;
 	}
+	
 	#foot_btn .el-pagination .number:hover {
 		color: lightcoral;
 	}
+	
 	#foot_btn .el-pagination .number.active:hover {
 		color: white;
 	}

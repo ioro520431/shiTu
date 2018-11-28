@@ -62,7 +62,61 @@ module.exports = {
         let menuService = new MenuService();
         //MenuService模块初始化
         menuService.init();
-        menuService.selectMenuByItem(menuKind,info,result=>{
+        menuService.selectMenuByItem(menuKind, info, result => {
+            resp.json(result);
+        });
+    },
+    //饮食健康调理部分数据查询
+    adjustMenu: (req, resp) => {
+        let ad_text = {
+            one: req.query.one,
+            two: req.query.two,
+            three: req.query.three,
+            four: req.query.four
+        };
+        //引入MenuService模块
+        const MenuService = require('../Service/MenuService.js');
+        let menuService = new MenuService();
+        //MenuService模块初始化
+        menuService.init();
+        menuService.selectMenuByAdjust(ad_text, result => {
+            resp.json(result)
+        });
+    },
+    //饮食健康页面数据查询
+    heathMenu: (req, resp) => {
+        let heal_kind = req.query.heal_kind;
+        //引入MenuService模块
+        const MenuService = require('../Service/MenuService.js');
+        let menuService = new MenuService();
+        //MenuService模块初始化
+        menuService.init();
+        menuService.selectHealthyMenu(heal_kind,result=>{
+            resp.json(result);
+        });
+    },
+    //饮食健康咨询详情页路由请求处理
+    healItem: (req,resp)=>{
+        let heal_id = req.query.heal_id;
+        //引入MenuService模块
+        const MenuService = require('../Service/MenuService.js');
+        let menuService = new MenuService();
+        //MenuService模块初始化
+        menuService.init();
+        menuService.selectHealthyMenuById(heal_id,result=>{
+            resp.json(result);
+        });
+    },
+    //查询首页健康咨询
+    homeHeal: (req,resp)=>{
+        let heal_kind = req.query.heal_kind;
+        //引入MenuService模块
+        const MenuService = require('../Service/MenuService.js');
+        let menuService = new MenuService();
+        //MenuService模块初始化
+        menuService.init();
+        menuService.selectHealthyMenu(heal_kind,result=>{
+            result = result.slice(0,3)
             resp.json(result);
         });
     }

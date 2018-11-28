@@ -42,7 +42,7 @@ module.exports = function () {
         });
     };
 
-    this.selectCollect = (info,call)=>{
+    this.checkCollect = (info,call)=>{
         var userAddSql = "SELECT * FROM focus WHERE u_id='" + info[0] + "' and m_id= '" + info[1] + "';";
         this.connection.query(userAddSql, info, function (err, result) {
             if (err) {
@@ -52,7 +52,36 @@ module.exports = function () {
             call(result);
         });
     };
-
+    this.selectCollectByUserId = (info,call)=>{
+        var userAddSql = "SELECT * FROM focus WHERE " + info[0] + " = '" + info[1] + "';";
+        this.connection.query(userAddSql, info, function (err, result) {
+            if (err) {
+                console.log('[INSERT ERROR] - ', err.message);
+                return;
+            }
+            call(result);
+        });
+    };
+    this.selectCollectMenu = (u_id,call)=>{
+        var userAddSql = "SELECT * FROM focus f,menu m WHERE f.m_id=m.m_id and f.u_id="+u_id+";";
+        this.connection.query(userAddSql, function (err, result) {
+            if (err) {
+                console.log('[INSERT ERROR] - ', err.message);
+                return;
+            }
+            call(result);
+        });
+    };
+    this.selectInfo = (info,call)=>{
+        var userGetSql = "SELECT name,sex,address FROM users WHERE " + info[0] + " = '" + info[1] + "'";
+        this.connection.query(userGetSql, function (err, result) {
+            if (err) {
+                console.log('[INSERT ERROR] - ', err.message);
+                return;
+            }
+            call(result);
+        });
+    }
     this.insertCollect = (info,call)=>{
         var userAddSql = "INSERT INTO focus(u_id,m_id) values(?,?)";
         this.connection.query(userAddSql, info, function (err, result) {
@@ -63,7 +92,16 @@ module.exports = function () {
             call(result);
         });
     };
-
+    this.deleteCollectById = (f_id,call)=>{
+        var userAddSql = "DELETE FROM focus WHERE f_id='"+f_id+"';";
+        this.connection.query(userAddSql, function (err, result) {
+            if (err) {
+                console.log('[INSERT ERROR] - ', err.message);
+                return;
+            }
+            call(result);
+        });
+    };
     this.closeConnecte = function(){
         //3,连接结束
         this.connection.end();
