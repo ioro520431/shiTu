@@ -14,6 +14,8 @@ import RecipeVideo from '@/components/RecipeVideo.vue'
 import VedioPlayer from '@/components/VedioPlayer.vue'
 import Personal from '@/components/Personal.vue'
 import Loadding from '@/components/Loadding.vue'
+import Phone from '@/components/Phone.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -92,6 +94,11 @@ export default new Router({
       path: '/Loadding',
       name: 'Loadding',
       component: Loadding
+    },
+    {
+    	path: '/phone',
+      name: 'Phone',
+      component: Phone
     }
   ],
   mode: 'history',

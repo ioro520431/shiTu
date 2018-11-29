@@ -13,7 +13,7 @@
 					</span>
 				</div>
 				<el-button>
-					<router-link to='/personal' class='release'>发布菜谱</router-link>
+					<router-link to='/Loadding' class='release'>发布菜谱</router-link>
 				</el-button>
 			</div>
 			<div class="main_content">
@@ -27,11 +27,11 @@
 						</el-row>
 					</el-tab-pane>
 					<el-tab-pane label="我的菜谱" name="second">
-						<!--<el-row :gutter='20'>
-							<el-col :span='6' class='row' v-for='item in 2' :key='item'>
-								<menuItem></menuItem>
+						<el-row :gutter='20'>
+							<el-col :span='6' class='row' v-for='(item,index) in release' :key='index'>
+								<menuItem :menuInfo='item'></menuItem>
 							</el-col>
-						</el-row>-->
+						</el-row>
 					</el-tab-pane>
 				</el-tabs>
 			</div>
@@ -51,7 +51,8 @@
 			return {
 				activeName: 'first',
 				userInfo:'',
-				collection:''
+				collection:'',
+				release:''
 			};
 		},
 		methods: {
@@ -64,6 +65,7 @@
 				}).then(response=>{
 					_this.userInfo = response.data.userInfo;
 					_this.collection = response.data.collection;
+					_this.release = response.data.release;
 				})
 			},
 			cancel(f_id){
@@ -78,16 +80,6 @@
 						 _this.initialize();
 					}
 				})
-			}
-		},
-		watch:{
-			activeName2(val){
-				if(val=='first'){
-					
-				}
-				else if(val=='second'){
-					
-				}
 			}
 		},
 		components:{

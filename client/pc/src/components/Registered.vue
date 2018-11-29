@@ -638,6 +638,8 @@
 						if(response.data.state==1){
 							alert(response.data.msg)
 							this.$router.replace('/login')
+						}else{
+							alert(response.data.msg)
 						}
 					})
 				}

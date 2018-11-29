@@ -62,11 +62,20 @@ module.exports = function () {
     this.selectCollection = (u_id, call) => {
         let _this = this;
         _this.usersDao.selectCollectMenu(u_id, result => {
+            let data={};
             for (let index in result) {
                 result[index].tip = _this.dealData(result[index].tip);
                 result[index].step = _this.dealData(result[index].step);
             }
-            call(result);
+            data.collection = result;
+            _this.usersDao.selectReleaseMenu(u_id,result=>{
+                for (let index in result) {
+                    result[index].tip = _this.dealData(result[index].tip);
+                    result[index].step = _this.dealData(result[index].step);
+                }
+                data.release = result;
+                call(data);
+            })
         })
     };
     this.collect = (u_id, m_id, call) => {

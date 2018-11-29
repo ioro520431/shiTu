@@ -72,6 +72,16 @@ module.exports = function () {
             call(result);
         });
     };
+    this.selectReleaseMenu= (u_id,call)=>{
+        var userAddSql = "SELECT * FROM menu WHERE creater_id="+u_id+";";
+        this.connection.query(userAddSql, function (err, result) {
+            if (err) {
+                console.log('[INSERT ERROR] - ', err.message);
+                return;
+            }
+            call(result);
+        });
+    }
     this.selectInfo = (info,call)=>{
         var userGetSql = "SELECT name,sex,address FROM users WHERE " + info[0] + " = '" + info[1] + "'";
         this.connection.query(userGetSql, function (err, result) {

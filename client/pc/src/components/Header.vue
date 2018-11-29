@@ -171,7 +171,7 @@
 							<router-link to='/recipe_video'><strong :class="{active:topFlag==5}">菜谱视频</strong></router-link>
 						</li>
 						<li>
-							<router-link to='#'><strong :class="{active:topFlag==7}">手机APP</strong></router-link>
+							<router-link to='/phone'><strong :class="{active:topFlag==6}">手机APP</strong></router-link>
 						</li>
 					</ul>
 				</nav>

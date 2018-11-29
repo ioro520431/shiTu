@@ -67,7 +67,8 @@ module.exports = {
                 userInfo:result
             }
             userService.selectCollection(u_id,result=>{
-                info.collection = result;
+                info.collection = result.collection;
+                info.release = result.release;
                 resp.json(info);
             })
         });
