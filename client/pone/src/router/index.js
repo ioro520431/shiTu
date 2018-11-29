@@ -1,17 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import HelloWorld from '@/components/HelloWorld'
-import Home from '@/components/Home'
-import All from '@/components/All'
-import Health from '@/components/Health'
-import Menu from '@/components/Menu'
-import Video from '@/components/Video'
-import Recommend from '@/components/Recommend'
-import MenuTwo from '@/components/MenuTwo'
-import Dinner from '@/components/Dinner'
-import Night from '@/components/Night'
-import Carte from '@/components/Carte'
+import Home from '@/components/home_page/Home'
+import Video from '@/components/video/Video'
+import About from '@/components/About/About'
+import resign from '@/components/About/resign'
+import login from '@/components/About/login'
+import Health from '@/components/Health/Health'
+import Classify from '@/components/Classify/Classify'
+import breakfast from '@/components/detail/breakfast'
+import lunch from '@/components/detail/lunch'
+import dinner from '@/components/detail/dinner'
+import nightsnack from '@/components/detail/nightsnack'
+import menu from '@/components/menu-page/menu'
+import menuall from '@/components/menu-page/menuall'
 Vue.config.productionTip = false
 Vue.use(Router)
 
@@ -20,58 +22,70 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-     {
-      path: '/home',
       name: 'Home',
       component: Home
-    },
+ }
+   ,
      {
-      path: '/all',
-      name: 'All',
-      component: All
+      path: '/classify',
+      name: 'Classify',
+      component: Classify 
     },
      {
       path: '/health',
       name: 'Health',
-      component: Health
-    },
-     {
-      path: '/menu',
-      name: 'Menu',
-      component: Menu
+      component: Health 
     },
      {
       path: '/video',
       name: 'Video',
       component: Video
     },
-     {
-      path: '/menuTwo',
-      name: 'MenuTwo',
-      component: MenuTwo
+       {
+      path: '/About',
+      name: 'About',
+      component: About
+    },
+    {
+      path: '/resign',
+      name: 'resign',
+      component: resign
+    },
+      {
+      path: '/login',
+      name: 'login',
+      component: login
     },
      {
-      path: '/recommend',
-      name: 'Recommend',
-      component: Recommend
+      path: '/breakfast',
+      name: 'breakfast',
+      component: breakfast
+    },
+     {
+      path: '/lunch',
+      name: 'lunch',
+      component: lunch
     },
      {
       path: '/dinner',
-      name: 'Dinner',
-      component: Dinner
+      name: 'dinner',
+      component: dinner
     },
      {
-      path: '/night',
-      name: 'Night',
-      component: Night
+      path: '/nightsnack',
+      name: 'nightsnack',
+      component: nightsnack
     },
      {
-      path: '/carte',
-      name: 'Carte',
-      component: Carte
+      path: '/menu',
+      name: 'menu',
+      component: menu
+    },
+     {
+      path: '/menuall',
+      name: 'menuall',
+      component: menuall
     }
+     
   ]
 });
